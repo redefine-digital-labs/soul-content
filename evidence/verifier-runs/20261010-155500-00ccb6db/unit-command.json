@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui",
+    "move",
+    "test",
+    "--path",
+    "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/verifier-runs/20261010-155500-00ccb6db/graph/content",
+    "--install-dir",
+    "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/verifier-runs/20261010-155500-00ccb6db/test-build"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 24.78796100616455,
+  "RPC": false,
+  "graph_dependencies": "all local frozen source",
+  "default_test_budget_unchanged": true
+}

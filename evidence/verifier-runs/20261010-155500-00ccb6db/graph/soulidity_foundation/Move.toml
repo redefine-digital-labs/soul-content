@@ -1,0 +1,8 @@
+[package]
+name = "SoulidityFoundation"
+edition = "2024"
+
+[dependencies]
+Sui = { local = "../sui-framework", override = true }
+[addresses]
+soulidity_foundation = "0x0"

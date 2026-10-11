@@ -1,0 +1,2712 @@
+{
+  "id": {
+    "address": "soulidity_standard",
+    "name": "soul"
+  },
+  "doc": " Application-independent asset root. No mutable UID or mutable-child escape.",
+  "immediate_dependencies": [
+    {
+      "address": "std",
+      "name": "ascii"
+    },
+    {
+      "address": "std",
+      "name": "bcs"
+    },
+    {
+      "address": "std",
+      "name": "hash"
+    },
+    {
+      "address": "std",
+      "name": "option"
+    },
+    {
+      "address": "std",
+      "name": "string"
+    },
+    {
+      "address": "std",
+      "name": "type_name"
+    },
+    {
+      "address": "std",
+      "name": "vector"
+    },
+    {
+      "address": "sui",
+      "name": "dynamic_object_field"
+    },
+    {
+      "address": "sui",
+      "name": "event"
+    },
+    {
+      "address": "sui",
+      "name": "object"
+    },
+    {
+      "address": "sui",
+      "name": "package"
+    },
+    {
+      "address": "sui",
+      "name": "tx_context"
+    }
+  ],
+  "attributes": [],
+  "functions": {
+    "init": {
+      "source_index": 0,
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "w",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "soulidity_standard",
+                "name": "soul"
+              },
+              "name": "SOUL",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "ctx",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "same_module": {
+      "source_index": 1,
+      "index": 1,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        },
+        {
+          "name": "T",
+          "constraints": []
+        }
+      ],
+      "parameters": [],
+      "return_": []
+    },
+    "hash32": {
+      "source_index": 2,
+      "index": 2,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "value",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "vector": "u8"
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "check_name": {
+      "source_index": 3,
+      "index": 3,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "value",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "vector": "u8"
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "ready": {
+      "source_index": 4,
+      "index": 4,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "cas": {
+      "source_index": 5,
+      "index": 5,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "expected",
+          "type_": "u64"
+        }
+      ],
+      "return_": []
+    },
+    "child_hash": {
+      "source_index": 6,
+      "index": 6,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "value",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "NamedTypeParameter": "T"
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "vector": "u8"
+        }
+      ]
+    },
+    "new": {
+      "source_index": 7,
+      "index": 7,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": [
+            "Drop"
+          ]
+        },
+        {
+          "name": "P",
+          "constraints": [
+            "Key"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "witness",
+          "type_": {
+            "NamedTypeParameter": "W"
+          }
+        },
+        {
+          "name": "source",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "NamedTypeParameter": "P"
+              }
+            ]
+          }
+        },
+        {
+          "name": "source_version",
+          "type_": "u64"
+        },
+        {
+          "name": "source_hash",
+          "type_": {
+            "vector": "u8"
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "std",
+                "name": "string"
+              },
+              "name": "String",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "ctx",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_standard",
+              "name": "soul"
+            },
+            "name": "Soul",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "find": {
+      "source_index": 8,
+      "index": 8,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "vector": "u8"
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "std",
+              "name": "option"
+            },
+            "name": "Option",
+            "type_arguments": [
+              {
+                "phantom": false,
+                "argument": "u64"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "index": {
+      "source_index": 9,
+      "index": 9,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        },
+        {
+          "name": "T",
+          "constraints": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "vector": "u8"
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "changed": {
+      "source_index": 10,
+      "index": 10,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "operation",
+          "type_": "u8"
+        },
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "install": {
+      "source_index": 11,
+      "index": 11,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": [
+            "Drop"
+          ]
+        },
+        {
+          "name": "T",
+          "constraints": [
+            "Key",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "witness",
+          "type_": {
+            "NamedTypeParameter": "W"
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "vector": "u8"
+          }
+        },
+        {
+          "name": "value",
+          "type_": {
+            "NamedTypeParameter": "T"
+          }
+        },
+        {
+          "name": "schema",
+          "type_": "u16"
+        },
+        {
+          "name": "removable",
+          "type_": "bool"
+        },
+        {
+          "name": "semantic_hash",
+          "type_": {
+            "vector": "u8"
+          }
+        },
+        {
+          "name": "expected",
+          "type_": "u64"
+        }
+      ],
+      "return_": []
+    },
+    "borrow_module": {
+      "source_index": 12,
+      "index": 12,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        },
+        {
+          "name": "T",
+          "constraints": [
+            "Key",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "vector": "u8"
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Reference": [
+            false,
+            {
+              "NamedTypeParameter": "T"
+            }
+          ]
+        }
+      ]
+    },
+    "uninstall": {
+      "source_index": 13,
+      "index": 13,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        },
+        {
+          "name": "T",
+          "constraints": [
+            "Key",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "vector": "u8"
+          }
+        },
+        {
+          "name": "expected",
+          "type_": "u64"
+        }
+      ],
+      "return_": [
+        {
+          "NamedTypeParameter": "T"
+        }
+      ]
+    },
+    "begin_update": {
+      "source_index": 14,
+      "index": 14,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": [
+            "Drop"
+          ]
+        },
+        {
+          "name": "T",
+          "constraints": [
+            "Key",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "witness",
+          "type_": {
+            "NamedTypeParameter": "W"
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "vector": "u8"
+          }
+        },
+        {
+          "name": "expected",
+          "type_": "u64"
+        }
+      ],
+      "return_": [
+        {
+          "NamedTypeParameter": "T"
+        },
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_standard",
+              "name": "soul"
+            },
+            "name": "Edit",
+            "type_arguments": [
+              {
+                "phantom": true,
+                "argument": {
+                  "NamedTypeParameter": "W"
+                }
+              },
+              {
+                "phantom": true,
+                "argument": {
+                  "NamedTypeParameter": "T"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "commit_update": {
+      "source_index": 15,
+      "index": 15,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": [
+            "Drop"
+          ]
+        },
+        {
+          "name": "T",
+          "constraints": [
+            "Key",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "ticket",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "soulidity_standard",
+                "name": "soul"
+              },
+              "name": "Edit",
+              "type_arguments": [
+                {
+                  "phantom": true,
+                  "argument": {
+                    "NamedTypeParameter": "W"
+                  }
+                },
+                {
+                  "phantom": true,
+                  "argument": {
+                    "NamedTypeParameter": "T"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "witness",
+          "type_": {
+            "NamedTypeParameter": "W"
+          }
+        },
+        {
+          "name": "value",
+          "type_": {
+            "NamedTypeParameter": "T"
+          }
+        },
+        {
+          "name": "schema",
+          "type_": "u16"
+        },
+        {
+          "name": "semantic_hash",
+          "type_": {
+            "vector": "u8"
+          }
+        }
+      ],
+      "return_": []
+    },
+    "revision": {
+      "source_index": 16,
+      "index": 16,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "schema": {
+      "source_index": 17,
+      "index": 17,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u16"
+      ]
+    },
+    "name": {
+      "source_index": 18,
+      "index": 18,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Reference": [
+            false,
+            {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "string"
+                },
+                "name": "String",
+                "type_arguments": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "origin": {
+      "source_index": 19,
+      "index": 19,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_standard",
+              "name": "soul"
+            },
+            "name": "Origin",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "source": {
+      "source_index": 20,
+      "index": 20,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "o",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Origin",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "source_type": {
+      "source_index": 21,
+      "index": 21,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "o",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Origin",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "std",
+              "name": "type_name"
+            },
+            "name": "TypeName",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "producer": {
+      "source_index": 22,
+      "index": 22,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "o",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Origin",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "std",
+              "name": "type_name"
+            },
+            "name": "TypeName",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "source_version": {
+      "source_index": 23,
+      "index": 23,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "o",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Origin",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "source_hash": {
+      "source_index": 24,
+      "index": 24,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "o",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Origin",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "vector": "u8"
+        }
+      ]
+    },
+    "minted_by": {
+      "source_index": 25,
+      "index": 25,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "o",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Origin",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "address"
+      ]
+    },
+    "module_count": {
+      "source_index": 26,
+      "index": 26,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "descriptor": {
+      "source_index": 27,
+      "index": 27,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "vector": "u8"
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "std",
+              "name": "option"
+            },
+            "name": "Option",
+            "type_arguments": [
+              {
+                "phantom": false,
+                "argument": {
+                  "Datatype": {
+                    "module": {
+                      "address": "soulidity_standard",
+                      "name": "soul"
+                    },
+                    "name": "Descriptor",
+                    "type_arguments": []
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "module_page": {
+      "source_index": 28,
+      "index": 28,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "offset",
+          "type_": "u64"
+        },
+        {
+          "name": "limit",
+          "type_": "u64"
+        }
+      ],
+      "return_": [
+        {
+          "vector": {
+            "Datatype": {
+              "module": {
+                "address": "soulidity_standard",
+                "name": "soul"
+              },
+              "name": "Descriptor",
+              "type_arguments": []
+            }
+          }
+        }
+      ]
+    },
+    "module_id": {
+      "source_index": 29,
+      "index": 29,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "namespace": {
+      "source_index": 30,
+      "index": 30,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "std",
+              "name": "type_name"
+            },
+            "name": "TypeName",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "module_name": {
+      "source_index": 31,
+      "index": 31,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "vector": "u8"
+        }
+      ]
+    },
+    "value_type": {
+      "source_index": 32,
+      "index": 32,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "std",
+              "name": "type_name"
+            },
+            "name": "TypeName",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "module_schema": {
+      "source_index": 33,
+      "index": 33,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u16"
+      ]
+    },
+    "removable": {
+      "source_index": 34,
+      "index": 34,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "bool"
+      ]
+    },
+    "body_hash": {
+      "source_index": 35,
+      "index": 35,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "vector": "u8"
+        }
+      ]
+    },
+    "semantic_hash": {
+      "source_index": 36,
+      "index": 36,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "vector": "u8"
+        }
+      ]
+    },
+    "manifest": {
+      "source_index": 37,
+      "index": 37,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_standard",
+              "name": "soul"
+            },
+            "name": "Manifest",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "manifest_hash": {
+      "source_index": 38,
+      "index": 38,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "vector": "u8"
+        }
+      ]
+    },
+    "assert_manifest": {
+      "source_index": 39,
+      "index": 39,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "expected_revision",
+          "type_": "u64"
+        },
+        {
+          "name": "expected_hash",
+          "type_": {
+            "vector": "u8"
+          }
+        }
+      ],
+      "return_": []
+    },
+    "nest": {
+      "source_index": 40,
+      "index": 40,
+      "doc": " Native whole-asset composition. Unnesting is always available to the actual\n parent holder; no application can turn this namespace into a permanent lock.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "child",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "soulidity_standard",
+                "name": "soul"
+              },
+              "name": "Soul",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "expected",
+          "type_": "u64"
+        }
+      ],
+      "return_": []
+    },
+    "nested": {
+      "source_index": 41,
+      "index": 41,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "child",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "sui",
+                "name": "object"
+              },
+              "name": "ID",
+              "type_arguments": []
+            }
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Reference": [
+            false,
+            {
+              "Datatype": {
+                "module": {
+                  "address": "soulidity_standard",
+                  "name": "soul"
+                },
+                "name": "Soul",
+                "type_arguments": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "unnest": {
+      "source_index": 42,
+      "index": 42,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "child",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "sui",
+                "name": "object"
+              },
+              "name": "ID",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "expected",
+          "type_": "u64"
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_standard",
+              "name": "soul"
+            },
+            "name": "Soul",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "begin_nested_update": {
+      "source_index": 43,
+      "index": 43,
+      "doc": " PTB-compatible value path. No mutable child/root UID or reference escapes;\n edited child must return under the same parent with the same object ID.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "child",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "sui",
+                "name": "object"
+              },
+              "name": "ID",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "expected",
+          "type_": "u64"
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_standard",
+              "name": "soul"
+            },
+            "name": "Soul",
+            "type_arguments": []
+          }
+        },
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_standard",
+              "name": "soul"
+            },
+            "name": "Edit",
+            "type_arguments": [
+              {
+                "phantom": true,
+                "argument": {
+                  "Datatype": {
+                    "module": {
+                      "address": "soulidity_standard",
+                      "name": "soul"
+                    },
+                    "name": "NestedSoulWitness",
+                    "type_arguments": []
+                  }
+                }
+              },
+              {
+                "phantom": true,
+                "argument": {
+                  "Datatype": {
+                    "module": {
+                      "address": "soulidity_standard",
+                      "name": "soul"
+                    },
+                    "name": "Soul",
+                    "type_arguments": []
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "commit_nested_update": {
+      "source_index": 44,
+      "index": 44,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "ticket",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "soulidity_standard",
+                "name": "soul"
+              },
+              "name": "Edit",
+              "type_arguments": [
+                {
+                  "phantom": true,
+                  "argument": {
+                    "Datatype": {
+                      "module": {
+                        "address": "soulidity_standard",
+                        "name": "soul"
+                      },
+                      "name": "NestedSoulWitness",
+                      "type_arguments": []
+                    }
+                  }
+                },
+                {
+                  "phantom": true,
+                  "argument": {
+                    "Datatype": {
+                      "module": {
+                        "address": "soulidity_standard",
+                        "name": "soul"
+                      },
+                      "name": "Soul",
+                      "type_arguments": []
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "child",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "soulidity_standard",
+                "name": "soul"
+              },
+              "name": "Soul",
+              "type_arguments": []
+            }
+          }
+        }
+      ],
+      "return_": []
+    }
+  },
+  "structs": {
+    "SOUL": {
+      "index": 0,
+      "doc": " Package ownership proof for standard Sui integrations such as a real\n TransferPolicy<Soul>. The kernel does not install rules or depend on a market.",
+      "attributes": [],
+      "abilities": [
+        "Drop"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "dummy_field": {
+            "index": 0,
+            "type_": "bool"
+          }
+        }
+      }
+    },
+    "Soul": {
+      "index": 1,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Key",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "id": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "UID",
+                "type_arguments": []
+              }
+            }
+          },
+          "schema": {
+            "index": 1,
+            "doc": null,
+            "type_": "u16"
+          },
+          "name": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "string"
+                },
+                "name": "String",
+                "type_arguments": []
+              }
+            }
+          },
+          "revision": {
+            "index": 3,
+            "doc": null,
+            "type_": "u64"
+          },
+          "origin": {
+            "index": 4,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "soulidity_standard",
+                  "name": "soul"
+                },
+                "name": "Origin",
+                "type_arguments": []
+              }
+            }
+          },
+          "modules": {
+            "index": 5,
+            "doc": null,
+            "type_": {
+              "vector": {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            }
+          },
+          "editing": {
+            "index": 6,
+            "doc": null,
+            "type_": "bool"
+          }
+        }
+      }
+    },
+    "Origin": {
+      "index": 2,
+      "doc": " Source identity is an actual object input. Version/hash are its module's\n attestation, not a kernel interpretation of a Maker or a storage service.",
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "producer": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "type_name"
+                },
+                "name": "TypeName",
+                "type_arguments": []
+              }
+            }
+          },
+          "source_type": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "type_name"
+                },
+                "name": "TypeName",
+                "type_arguments": []
+              }
+            }
+          },
+          "source": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "source_version": {
+            "index": 3,
+            "doc": null,
+            "type_": "u64"
+          },
+          "source_hash": {
+            "index": 4,
+            "doc": null,
+            "type_": {
+              "vector": "u8"
+            }
+          },
+          "minted_by": {
+            "index": 5,
+            "doc": null,
+            "type_": "address"
+          }
+        }
+      }
+    },
+    "Descriptor": {
+      "index": 3,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "namespace": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "type_name"
+                },
+                "name": "TypeName",
+                "type_arguments": []
+              }
+            }
+          },
+          "name": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "vector": "u8"
+            }
+          },
+          "value_type": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "type_name"
+                },
+                "name": "TypeName",
+                "type_arguments": []
+              }
+            }
+          },
+          "object": {
+            "index": 3,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "schema": {
+            "index": 4,
+            "doc": null,
+            "type_": "u16"
+          },
+          "removable": {
+            "index": 5,
+            "doc": null,
+            "type_": "bool"
+          },
+          "body_hash": {
+            "index": 6,
+            "doc": null,
+            "type_": {
+              "vector": "u8"
+            }
+          },
+          "semantic_hash": {
+            "index": 7,
+            "doc": null,
+            "type_": {
+              "vector": "u8"
+            }
+          }
+        }
+      }
+    },
+    "ModuleKey": {
+      "index": 4,
+      "doc": " Private constructor and typed DOF keys isolate every application namespace.",
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [
+        {
+          "phantom": true,
+          "name": "W",
+          "constraints": []
+        }
+      ],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "name": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "vector": "u8"
+            }
+          }
+        }
+      }
+    },
+    "NestedSoulWitness": {
+      "index": 5,
+      "doc": " Canonical native nesting namespace. A nested Soul remains a distinct asset,\n never a new form of its parent. Constructor stays inside this module.",
+      "attributes": [],
+      "abilities": [
+        "Drop"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "dummy_field": {
+            "index": 0,
+            "type_": "bool"
+          }
+        }
+      }
+    },
+    "Edit": {
+      "index": 6,
+      "doc": " No abilities: successful transactions must restore this exact child into\n this exact Soul. Permanent modules can be edited but cannot be withdrawn.",
+      "attributes": [],
+      "abilities": [],
+      "type_parameters": [
+        {
+          "phantom": true,
+          "name": "W",
+          "constraints": []
+        },
+        {
+          "phantom": true,
+          "name": "T",
+          "constraints": []
+        }
+      ],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "soul": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "object": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "name": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "vector": "u8"
+            }
+          },
+          "revision": {
+            "index": 3,
+            "doc": null,
+            "type_": "u64"
+          }
+        }
+      }
+    },
+    "Changed": {
+      "index": 7,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "soul": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "revision": {
+            "index": 1,
+            "doc": null,
+            "type_": "u64"
+          },
+          "operation": {
+            "index": 2,
+            "doc": null,
+            "type_": "u8"
+          },
+          "namespace": {
+            "index": 3,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "type_name"
+                },
+                "name": "TypeName",
+                "type_arguments": []
+              }
+            }
+          },
+          "name": {
+            "index": 4,
+            "doc": null,
+            "type_": {
+              "vector": "u8"
+            }
+          },
+          "object": {
+            "index": 5,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "Manifest": {
+      "index": 8,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "domain": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "vector": "u8"
+            }
+          },
+          "soul": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "schema": {
+            "index": 2,
+            "doc": null,
+            "type_": "u16"
+          },
+          "name": {
+            "index": 3,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "string"
+                },
+                "name": "String",
+                "type_arguments": []
+              }
+            }
+          },
+          "revision": {
+            "index": 4,
+            "doc": null,
+            "type_": "u64"
+          },
+          "origin": {
+            "index": 5,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "soulidity_standard",
+                  "name": "soul"
+                },
+                "name": "Origin",
+                "type_arguments": []
+              }
+            }
+          },
+          "modules": {
+            "index": 6,
+            "doc": null,
+            "type_": {
+              "vector": {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Descriptor",
+                  "type_arguments": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "enums": {}
+}

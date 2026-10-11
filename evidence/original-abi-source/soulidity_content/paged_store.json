@@ -1,0 +1,618 @@
+{
+  "id": {
+    "address": "soulidity_content",
+    "name": "paged_store"
+  },
+  "doc": " Append-only indexed metadata. A large inventory never grows one inline object.\n Public builders mutate only caller-owned copyable metadata; owning modules keep installed stores private.",
+  "immediate_dependencies": [
+    {
+      "address": "std",
+      "name": "bcs"
+    },
+    {
+      "address": "std",
+      "name": "vector"
+    },
+    {
+      "address": "sui",
+      "name": "table"
+    },
+    {
+      "address": "sui",
+      "name": "tx_context"
+    }
+  ],
+  "attributes": [],
+  "functions": {
+    "new": {
+      "source_index": 0,
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "ctx",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_content",
+              "name": "paged_store"
+            },
+            "name": "Store",
+            "type_arguments": [
+              {
+                "phantom": false,
+                "argument": {
+                  "NamedTypeParameter": "T"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "length": {
+      "source_index": 1,
+      "index": 1,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "paged_store"
+                  },
+                  "name": "Store",
+                  "type_arguments": [
+                    {
+                      "phantom": false,
+                      "argument": {
+                        "NamedTypeParameter": "T"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "pages": {
+      "source_index": 2,
+      "index": 2,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "paged_store"
+                  },
+                  "name": "Store",
+                  "type_arguments": [
+                    {
+                      "phantom": false,
+                      "argument": {
+                        "NamedTypeParameter": "T"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "get": {
+      "source_index": 3,
+      "index": 3,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "paged_store"
+                  },
+                  "name": "Store",
+                  "type_arguments": [
+                    {
+                      "phantom": false,
+                      "argument": {
+                        "NamedTypeParameter": "T"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "index",
+          "type_": "u64"
+        }
+      ],
+      "return_": [
+        {
+          "Reference": [
+            false,
+            {
+              "NamedTypeParameter": "T"
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "source_index": 4,
+      "index": 4,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "paged_store"
+                  },
+                  "name": "Store",
+                  "type_arguments": [
+                    {
+                      "phantom": false,
+                      "argument": {
+                        "NamedTypeParameter": "T"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "vector": {
+            "NamedTypeParameter": "T"
+          }
+        }
+      ]
+    },
+    "range": {
+      "source_index": 5,
+      "index": 5,
+      "doc": " Read an exact insertion-order interval across row- or byte-limited pages.\n Returned copies are metadata, never an installed Store or custody proof.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "paged_store"
+                  },
+                  "name": "Store",
+                  "type_arguments": [
+                    {
+                      "phantom": false,
+                      "argument": {
+                        "NamedTypeParameter": "T"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "start",
+          "type_": "u64"
+        },
+        {
+          "name": "count",
+          "type_": "u64"
+        }
+      ],
+      "return_": [
+        {
+          "vector": {
+            "NamedTypeParameter": "T"
+          }
+        }
+      ]
+    },
+    "append": {
+      "source_index": 6,
+      "index": 6,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "paged_store"
+                  },
+                  "name": "Store",
+                  "type_arguments": [
+                    {
+                      "phantom": false,
+                      "argument": {
+                        "NamedTypeParameter": "T"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "value",
+          "type_": {
+            "NamedTypeParameter": "T"
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "from_values": {
+      "source_index": 7,
+      "index": 7,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "values",
+          "type_": {
+            "vector": {
+              "NamedTypeParameter": "T"
+            }
+          }
+        },
+        {
+          "name": "ctx",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_content",
+              "name": "paged_store"
+            },
+            "name": "Store",
+            "type_arguments": [
+              {
+                "phantom": false,
+                "argument": {
+                  "NamedTypeParameter": "T"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "destroy": {
+      "source_index": 8,
+      "index": 8,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "soulidity_content",
+                "name": "paged_store"
+              },
+              "name": "Store",
+              "type_arguments": [
+                {
+                  "phantom": false,
+                  "argument": {
+                    "NamedTypeParameter": "T"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "return_": []
+    }
+  },
+  "structs": {
+    "Location": {
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "page": {
+            "index": 0,
+            "doc": null,
+            "type_": "u64"
+          },
+          "index": {
+            "index": 1,
+            "doc": null,
+            "type_": "u64"
+          }
+        }
+      }
+    },
+    "Store": {
+      "index": 1,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Store"
+      ],
+      "type_parameters": [
+        {
+          "phantom": false,
+          "name": "T",
+          "constraints": [
+            "Copy",
+            "Drop",
+            "Store"
+          ]
+        }
+      ],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "pages": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "table"
+                },
+                "name": "Table",
+                "type_arguments": [
+                  {
+                    "phantom": true,
+                    "argument": "u64"
+                  },
+                  {
+                    "phantom": true,
+                    "argument": {
+                      "vector": {
+                        "NamedTypeParameter": "T"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "locations": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "vector": {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "paged_store"
+                  },
+                  "name": "Location",
+                  "type_arguments": []
+                }
+              }
+            }
+          },
+          "page_count": {
+            "index": 2,
+            "doc": null,
+            "type_": "u64"
+          },
+          "last_bytes": {
+            "index": 3,
+            "doc": null,
+            "type_": "u64"
+          }
+        }
+      }
+    }
+  },
+  "enums": {}
+}

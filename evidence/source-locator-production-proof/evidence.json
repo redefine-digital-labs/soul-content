@@ -1,0 +1,29 @@
+{
+  "exit_code": 0,
+  "command": [
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui",
+    "move",
+    "build",
+    "--path",
+    "/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-source-locator-4hfnbs6f/content",
+    "--install-dir",
+    "/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-source-locator-4hfnbs6f/build"
+  ],
+  "exact_source_set": [
+    "authority.move",
+    "authorization.move",
+    "blob_custody.move",
+    "document.move",
+    "founding_library.move",
+    "kind_registry.move",
+    "loadout.move",
+    "paged_store.move",
+    "paid_access.move",
+    "permissions.move",
+    "state_configuration.move",
+    "storage.move"
+  ],
+  "module_count": 12,
+  "location": "/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-source-locator-4hfnbs6f",
+  "transactions": 0
+}

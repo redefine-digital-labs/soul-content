@@ -1,0 +1,21 @@
+{
+  "roots": [
+    {
+      "package": "soulidity_v1",
+      "exit_code": 0,
+      "input_lock_preserved": true,
+      "equals_before_content_file_locators_dump": true,
+      "dump_sha256": "35115d3b9c5b027712d918b445f1cbf22e1af6da9d46d0af19807bf3cef2c8dd"
+    },
+    {
+      "package": "soulidity_native",
+      "exit_code": 0,
+      "input_lock_preserved": true,
+      "equals_before_content_file_locators_dump": true,
+      "dump_sha256": "56496c5687b7a66f883d20c77191d0830a1a9b067393dd217a7bed71db6ff600"
+    }
+  ],
+  "production_passed": true,
+  "same_artifacts": true,
+  "transactions": 0
+}

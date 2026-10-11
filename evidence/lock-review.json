@@ -1,0 +1,22 @@
+[
+  {
+    "path": "packages/soulidity_foundation/Move.lock",
+    "before_sha256": "5c6ddee0be90a667c14029867ce966a797aa4cd7f367b9f2ccb60742fb0683fa",
+    "after_sha256": "5c6ddee0be90a667c14029867ce966a797aa4cd7f367b9f2ccb60742fb0683fa",
+    "unchanged": true
+  },
+  {
+    "path": "packages/soulidity_standard/Move.lock",
+    "before_sha256": "fd95117eab9a3451f37f5db8a826bf76d16414d8c149cc203e096efe1edbdc44",
+    "after_sha256": "fd95117eab9a3451f37f5db8a826bf76d16414d8c149cc203e096efe1edbdc44",
+    "unchanged": true
+  },
+  {
+    "path": "packages/soulidity_content/Move.lock",
+    "new_generated_lock_sha256": "03e23b61dea1b872b342332a6588eca5c99f47350012b3cf559b5e297b7f95e9"
+  },
+  {
+    "path": "packages/content_original/Move.lock",
+    "new_generated_lock_sha256": "03e23b61dea1b872b342332a6588eca5c99f47350012b3cf559b5e297b7f95e9"
+  }
+]

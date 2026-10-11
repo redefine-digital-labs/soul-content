@@ -1,0 +1,65 @@
+{
+  "shared_content_nine_unchanged": true,
+  "source_rows": [
+    {
+      "module": "document",
+      "shared_current_sha256": "449575a36d14411276ad5c814ccdaeb4eff07d662d4b8bffeb72068e7bdb39e0",
+      "candidate_sha256": "449575a36d14411276ad5c814ccdaeb4eff07d662d4b8bffeb72068e7bdb39e0",
+      "equal": true
+    },
+    {
+      "module": "paged_store",
+      "shared_current_sha256": "33d15484e8d5868d0202654373577a024077b8d43ae680ee68e974fbfe7fda0a",
+      "candidate_sha256": "33d15484e8d5868d0202654373577a024077b8d43ae680ee68e974fbfe7fda0a",
+      "equal": true
+    },
+    {
+      "module": "storage",
+      "shared_current_sha256": "dba26fb0baac1a181363a43fb05353e77f078f527984442f79ca4647f25851ee",
+      "candidate_sha256": "dba26fb0baac1a181363a43fb05353e77f078f527984442f79ca4647f25851ee",
+      "equal": true
+    },
+    {
+      "module": "paid_access",
+      "shared_current_sha256": "3b39ce29771d0a22f668958b2198aafaa82deb75d5121d83a76882be47408c09",
+      "candidate_sha256": "3b39ce29771d0a22f668958b2198aafaa82deb75d5121d83a76882be47408c09",
+      "equal": true
+    },
+    {
+      "module": "permissions",
+      "shared_current_sha256": "5b0bf758bfed7bd53ad1af4618beb4552a0125e1fcccc8c49e830f370f786dff",
+      "candidate_sha256": "5b0bf758bfed7bd53ad1af4618beb4552a0125e1fcccc8c49e830f370f786dff",
+      "equal": true
+    },
+    {
+      "module": "kind_registry",
+      "shared_current_sha256": "9fa9db9d6d391bc27257ff7cb22552744b01e12ac7cf902a19adbbd0a08cad57",
+      "candidate_sha256": "9fa9db9d6d391bc27257ff7cb22552744b01e12ac7cf902a19adbbd0a08cad57",
+      "equal": true
+    },
+    {
+      "module": "authority",
+      "shared_current_sha256": "72b14a54093a542ffc065553920481cdffc3383eb6cb2f7d05f36c2355e97bfe",
+      "candidate_sha256": "72b14a54093a542ffc065553920481cdffc3383eb6cb2f7d05f36c2355e97bfe",
+      "equal": true
+    },
+    {
+      "module": "authorization",
+      "shared_current_sha256": "e1e337cd3e940f26f5eabad5c0fd486b192a0b6cf8327688c62e91ff310cb0dd",
+      "candidate_sha256": "e1e337cd3e940f26f5eabad5c0fd486b192a0b6cf8327688c62e91ff310cb0dd",
+      "equal": true
+    },
+    {
+      "module": "blob_custody",
+      "shared_current_sha256": "81ab5b2b929a7b67c74ab6c6bafea67891d56ce751ada2da99ebf0690eca2737",
+      "candidate_sha256": "81ab5b2b929a7b67c74ab6c6bafea67891d56ce751ada2da99ebf0690eca2737",
+      "equal": true
+    }
+  ],
+  "candidate_git_remote": "",
+  "candidate_HEAD_exists": false,
+  "verifier_final_sha256": "25db9f10e98d8f9af1c2ea9c5e88b71d5dbec9a603dae246622e2115bf7bf183",
+  "handoff": "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/docs/codex/handoffs/20261010-content9-isolated-candidate.md",
+  "latest_offline_verified_evidence": "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/evidence/verifier-runs/20261010-155100-b3e15ea4/evidence.json",
+  "final_guard_update_validation": "py_compile PASS; added exact original test hashes and external dependency pin/source preconditions; production/testing logic unchanged"
+}

@@ -1,0 +1,38 @@
+{
+  "expected_tests": 19,
+  "storage_epoch_tests": 12,
+  "pure_capacity_tests": 7,
+  "excluded_original_journeys": "Core/native/content/authorization/paid_access tests need real consumer responsibility extraction; not claimed by these 20 tests",
+  "files": [
+    {
+      "file": "packages/soulidity_content/tests/storage_epoch_tests.move",
+      "original": "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/frozen-original/storage_epoch_tests.move",
+      "adaptation": "namespace-only soulidity_v1 -> soulidity_content; all function bodies preserved",
+      "original_sha256": "1af40bd4c861719861ac6dcfc780a67b23070823b05dd703241f0d1c445469d8",
+      "candidate_sha256": "3a2b05155c33d23b19094908f52446ff715a6f31428ff38bb7841784e445e0c8"
+    },
+    {
+      "file": "packages/soulidity_content/tests/storage_fixture.move",
+      "original": "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/frozen-original/storage_fixture.move",
+      "adaptation": "namespace-only soulidity_v1 -> soulidity_content; all function bodies preserved",
+      "original_sha256": "f40f43ab556fc42bc9f2e58b10eade068f66221057f1838fc115d8bbb3de462c",
+      "candidate_sha256": "218fa3214c27e2db02b7518f64bc0bd6cee41bca093feecdcc4c5fc61b5928ac"
+    },
+    {
+      "file": "packages/soulidity_content/tests/capacity_tests.move",
+      "original": "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/frozen-original/capacity_tests.move",
+      "adaptation": "retain last seven pure paged_store tests byte-identical; remove two Maker/Model-dependent tests and unused imports; module namespace only changed",
+      "original_sha256": "7912e2423083accbf30b7be6ca4f81a8cd21d31890c274728a5d026fa54f8111",
+      "candidate_sha256": "bacbacfad4c7374de8f2d8628e3bde68f1a4a6c1f832a77f8f736c623cb3517d"
+    },
+    {
+      "file": "packages/soulidity_content/tests/fixtures.move",
+      "original": "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/frozen-original/fixtures.move",
+      "adaptation": "one original deterministic h function body retained byte-identical; no simulated business authorization, money or state",
+      "candidate_sha256": "03069a202fde6843b7e045bc0b8226128cc09b0b2a53bace0e1079a065f56bb6"
+    }
+  ],
+  "actual_tests": 19,
+  "actual_passed": 19,
+  "correction": "Initial count of 20 included the module-level test_only annotation as a test; corrected using actual runner output, retaining original logs."
+}

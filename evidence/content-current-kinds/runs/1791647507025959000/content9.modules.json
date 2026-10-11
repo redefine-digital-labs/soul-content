@@ -1,0 +1,11 @@
+{
+  "authority.mv": "856f63a744f0e50bc49c50cbb02807a5318ebaa115c0f6386c8223ff7c8ad986",
+  "document.mv": "d633f12d1c17121c24eb1dd1f3c809e90a34607d068dd964706ec2b74b4bffa8",
+  "storage.mv": "5517a9600c4177bf8ac4056d43edb71d8f27d0a209f75e93e11768d3616af112",
+  "kind_registry.mv": "6cce468c95fc04c3e46eddb52bc1c6eb466aa26ffa8096d62f514068777dd45e",
+  "permissions.mv": "dd7c702e8e87d9e7869baceb3e356cd6c6915a5625bd5b4b371b3d4bc89ff736",
+  "authorization.mv": "a5623a3faf463f19ec15aafe13b6719150d91392569b6256a2359e767ceea8ac",
+  "paged_store.mv": "3ce87a38d23136d1d7eceace909f49c4d839964f15e9189e7caaa2425b94f349",
+  "paid_access.mv": "3bdca84c70de511d1fd57ea8532c2c6294c461dcd6ba2d32d7fdf47f9ca67be2",
+  "blob_custody.mv": "fc719108f8298cd28509afe3cfb8a23b10a7654643e41eb6e1c4f85e080c8edc"
+}

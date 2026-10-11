@@ -1,0 +1,65 @@
+{
+  "id": {
+    "address": "soulidity_content",
+    "name": "permissions"
+  },
+  "doc": " Stable scope bits shared by descriptors, Soul authorization and content.",
+  "immediate_dependencies": [],
+  "attributes": [],
+  "functions": {
+    "scope_seal": {
+      "source_index": 0,
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "scope_memory": {
+      "source_index": 1,
+      "index": 1,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "scope_skills": {
+      "source_index": 2,
+      "index": 2,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "scope_assets": {
+      "source_index": 3,
+      "index": 3,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    }
+  },
+  "structs": {},
+  "enums": {}
+}

@@ -1,0 +1,785 @@
+{
+  "id": {
+    "address": "soulidity_foundation",
+    "name": "package_roles"
+  },
+  "doc": " Embedded configuration value, not a separate administrator or global registry.\n The owning Config must keep its mutable State private and authorize every edit.",
+  "immediate_dependencies": [
+    {
+      "address": "std",
+      "name": "ascii"
+    },
+    {
+      "address": "std",
+      "name": "option"
+    },
+    {
+      "address": "std",
+      "name": "type_name"
+    },
+    {
+      "address": "sui",
+      "name": "object"
+    },
+    {
+      "address": "sui",
+      "name": "package"
+    }
+  ],
+  "attributes": [],
+  "functions": {
+    "initial": {
+      "source_index": 0,
+      "index": 0,
+      "doc": " The private Config constructor supplies its real initial deployment identity.\n Creating a detached State confers no authority over any existing Config.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "original",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "sui",
+                "name": "object"
+              },
+              "name": "ID",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "callable",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "sui",
+                "name": "object"
+              },
+              "name": "ID",
+              "type_arguments": []
+            }
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_foundation",
+              "name": "package_roles"
+            },
+            "name": "State",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "names": {
+      "source_index": 1,
+      "index": 1,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        },
+        {
+          "name": "R",
+          "constraints": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "kind",
+          "type_": "u8"
+        }
+      ],
+      "return_": []
+    },
+    "role": {
+      "source_index": 2,
+      "index": 2,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "State",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u8"
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_foundation",
+              "name": "package_roles"
+            },
+            "name": "Role",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "original": {
+      "source_index": 3,
+      "index": 3,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "Role",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "callable": {
+      "source_index": 4,
+      "index": 4,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "Role",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "marker": {
+      "source_index": 5,
+      "index": 5,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "Role",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "std",
+              "name": "option"
+            },
+            "name": "Option",
+            "type_arguments": [
+              {
+                "phantom": false,
+                "argument": {
+                  "Datatype": {
+                    "module": {
+                      "address": "std",
+                      "name": "type_name"
+                    },
+                    "name": "TypeName",
+                    "type_arguments": []
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "version": {
+      "source_index": 6,
+      "index": 6,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "Role",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "pinned": {
+      "source_index": 7,
+      "index": 7,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "Role",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "bool"
+      ]
+    },
+    "frozen": {
+      "source_index": 8,
+      "index": 8,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "Role",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "bool"
+      ]
+    },
+    "register": {
+      "source_index": 9,
+      "index": 9,
+      "doc": " Publisher proves the stable installer module. UpgradeCap proves the actual\n lineage and latest package; a freshly introduced revision type proves that\n callable package. New types introduced by upgrades have new type origins.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": [
+            "Drop"
+          ]
+        },
+        {
+          "name": "R",
+          "constraints": [
+            "Drop"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "State",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u8"
+        },
+        {
+          "name": "_installer",
+          "type_": {
+            "NamedTypeParameter": "W"
+          }
+        },
+        {
+          "name": "_revision",
+          "type_": {
+            "NamedTypeParameter": "R"
+          }
+        },
+        {
+          "name": "p",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "package"
+                  },
+                  "name": "Publisher",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "cap",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "package"
+                  },
+                  "name": "UpgradeCap",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "assert_types": {
+      "source_index": 10,
+      "index": 10,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        },
+        {
+          "name": "R",
+          "constraints": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "State",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u8"
+        }
+      ],
+      "return_": []
+    },
+    "assert_identity": {
+      "source_index": 11,
+      "index": 11,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "State",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u8"
+        },
+        {
+          "name": "original",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "sui",
+                "name": "object"
+              },
+              "name": "ID",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "callable",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "sui",
+                "name": "object"
+              },
+              "name": "ID",
+              "type_arguments": []
+            }
+          }
+        }
+      ],
+      "return_": []
+    },
+    "pin": {
+      "source_index": 12,
+      "index": 12,
+      "doc": " First installation pins the original role lineage even without a later edit.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "State",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u8"
+        },
+        {
+          "name": "marker",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "std",
+                "name": "type_name"
+              },
+              "name": "TypeName",
+              "type_arguments": []
+            }
+          }
+        }
+      ],
+      "return_": []
+    },
+    "freeze_role": {
+      "source_index": 13,
+      "index": 13,
+      "doc": " Locks this Config's role selection. Does not destroy an UpgradeCap or make\n code immutable, and does not disable recovery/withdrawal on the parent.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "s",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "State",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u8"
+        }
+      ],
+      "return_": []
+    }
+  },
+  "structs": {
+    "Role": {
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "original": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "callable": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "marker": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "option"
+                },
+                "name": "Option",
+                "type_arguments": [
+                  {
+                    "phantom": false,
+                    "argument": {
+                      "Datatype": {
+                        "module": {
+                          "address": "std",
+                          "name": "type_name"
+                        },
+                        "name": "TypeName",
+                        "type_arguments": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "version": {
+            "index": 3,
+            "doc": null,
+            "type_": "u64"
+          },
+          "pinned": {
+            "index": 4,
+            "doc": null,
+            "type_": "bool"
+          },
+          "frozen": {
+            "index": 5,
+            "doc": null,
+            "type_": "bool"
+          }
+        }
+      }
+    },
+    "State": {
+      "index": 1,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "roles": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "vector": {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "package_roles"
+                  },
+                  "name": "Role",
+                  "type_arguments": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "enums": {}
+}

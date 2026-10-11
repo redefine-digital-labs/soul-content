@@ -1,0 +1,39 @@
+[NOTE] Updating dependencies for `mainnet` environment because "../soulidity_application/Move.toml" has been changed since the last update.
+[NOTE] Dependencies on Sui, MoveStdlib, Bridge, DeepBook, and SuiSystem are automatically added, but this feature is disabled for your package because you have explicitly included dependencies on Sui. Consider removing these dependencies from `Move.toml`.
+INCLUDING DEPENDENCY MoveStdlib
+INCLUDING DEPENDENCY SoulidityApplication
+INCLUDING DEPENDENCY SoulidityCommunity
+INCLUDING DEPENDENCY SoulidityContent
+INCLUDING DEPENDENCY SoulidityFoundation
+INCLUDING DEPENDENCY SoulidityModel
+INCLUDING DEPENDENCY SoulidityNative
+INCLUDING DEPENDENCY SoulidityStandard
+INCLUDING DEPENDENCY SoulidityVisual
+INCLUDING DEPENDENCY Sui
+INCLUDING DEPENDENCY WAL
+INCLUDING DEPENDENCY Walrus
+BUILDING soulidity_v1
+warning[WSL06002]: non-composable transfer to sender
+   ┌─ ./sources/access.move:81:88
+   │
+77 │ public fun withdraw(k:&mut Kiosk,a:&mut Account,id:ID,expected:u64,expected_soul:u64,ctx:&TxContext){
+   │            -------- Returning an object from a function, allows a caller to use the object and enables composability via programmable transactions.
+   ·
+81 │     soul::clear_authorizations(&mut s);vault::prepare_handover(&mut s);changed(k,id,1);transfer::public_transfer(s,ctx.sender())
+   │                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   │                                                                                        │                           │
+   │                                                                                        │                           Transaction sender address coming from here
+   │                                                                                        Transfer of an object to transaction sender address
+   │
+   = This warning can be suppressed with '#[allow(lint(self_transfer))]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[WC09002]: unused variable
+    ┌─ ./sources/release.move:145:228
+    │
+145 │     assert!(d.header.actor==ctx.sender(),EActor);assert!(paged_store::length(&d.rows)-d.returned<=30,EBounds);let Draft{mut id,header:_,expected:_,rows,index:_,revision:_,canceling:_,returned}=d;let DraftVersion{id:metadata_id,version}=dof::remove(&mut id,MetadataKey{});metadata_id.delete();let mut blobs=vector[blob_custody::take_document(&mut id,0),blob_custody::take_document(&mut id,1)];let mut i=returned;while(i < paged_store::length(&rows)){blobs.push_back(blob_custody::take(&mut id,i));i=i+1};paged_store::destroy(rows);id.delete();blobs
+    │                                                                                                                                                                                                                                    ^^^^^^^ Unused local variable 'version'. Consider removing or prefixing with an underscore: '_version'
+    │
+    = This warning can be suppressed with '#[allow(unused_variable)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+Please report feedback on the linter warnings at https://forums.sui.io
+

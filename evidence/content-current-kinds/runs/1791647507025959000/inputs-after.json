@@ -1,0 +1,147 @@
+[
+  {
+    "root": "soulidity_content",
+    "relative": "Move.toml",
+    "sha256": "c3ce867952d303ac1be39816beb421db52993633516641bbd471292a38babf66"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "Move.lock",
+    "sha256": "5ba135775ea05af1cdd882b277fcfa089d7d1b03353d18e28e63debde5b34106"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "sources/authority.move",
+    "sha256": "72b14a54093a542ffc065553920481cdffc3383eb6cb2f7d05f36c2355e97bfe"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "sources/authorization.move",
+    "sha256": "e1e337cd3e940f26f5eabad5c0fd486b192a0b6cf8327688c62e91ff310cb0dd"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "sources/blob_custody.move",
+    "sha256": "81ab5b2b929a7b67c74ab6c6bafea67891d56ce751ada2da99ebf0690eca2737"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "sources/document.move",
+    "sha256": "c97cda851d7fe7337d7ee417f2041fa0ea12c000dec86cd6d3605c1ef0bbb0e9"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "sources/kind_registry.move",
+    "sha256": "f23a055a01655eb569c897dd1cf6432890c9d98990cd8e2b13157a7e02355351"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "sources/paged_store.move",
+    "sha256": "33d15484e8d5868d0202654373577a024077b8d43ae680ee68e974fbfe7fda0a"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "sources/paid_access.move",
+    "sha256": "d741d6522a4758315fbd1ffb506cf4e589008904cb82ceb610956730bec62ae9"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "sources/permissions.move",
+    "sha256": "ca7f784a35545193e0d10379178de806c9038594329d94bcfce1a1ea226f3937"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "sources/storage.move",
+    "sha256": "dba26fb0baac1a181363a43fb05353e77f078f527984442f79ca4647f25851ee"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "tests/capacity_tests.move",
+    "sha256": "bacbacfad4c7374de8f2d8628e3bde68f1a4a6c1f832a77f8f736c623cb3517d"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "tests/fixtures.move",
+    "sha256": "03069a202fde6843b7e045bc0b8226128cc09b0b2a53bace0e1079a065f56bb6"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "tests/storage_epoch_tests.move",
+    "sha256": "3a2b05155c33d23b19094908f52446ff715a6f31428ff38bb7841784e445e0c8"
+  },
+  {
+    "root": "soulidity_content",
+    "relative": "tests/storage_fixture.move",
+    "sha256": "218fa3214c27e2db02b7518f64bc0bd6cee41bca093feecdcc4c5fc61b5928ac"
+  },
+  {
+    "root": "soulidity_content_kinds",
+    "relative": "Move.toml",
+    "sha256": "441743dec7f4d5a8fb18264b26b22f70c231c8df8496904a89c086c4e3238f86"
+  },
+  {
+    "root": "soulidity_content_kinds",
+    "relative": "Move.lock",
+    "sha256": "d18bb1135d517064c42c4ebbc4b8e0727c2b97cfedecf0a0c74324b4925bcd2d"
+  },
+  {
+    "root": "soulidity_content_kinds",
+    "relative": "sources/content_kind_registry.move",
+    "sha256": "9d5fcbafab4b22aaa332c53b5169f94dda2a9855890e6cb67e2913e59ed7f72c"
+  },
+  {
+    "root": "soulidity_content_kinds",
+    "relative": "sources/content_permissions.move",
+    "sha256": "c6124808bcceb5c4c563a3884558c29cad9e364dd429194736b39b4a5ae7be76"
+  },
+  {
+    "root": "soulidity_content_kinds",
+    "relative": "sources/document_policy.move",
+    "sha256": "4d450bebb3cbcca1c0980c4da966da39318714248d5dbb0ea620adabfd164e8f"
+  },
+  {
+    "root": "soulidity_standard",
+    "relative": "Move.toml",
+    "sha256": "78f8424112601ad8ff73cec5935ed6ed60243db71c365052da2ccba18657f9f7"
+  },
+  {
+    "root": "soulidity_standard",
+    "relative": "Move.lock",
+    "sha256": "fd95117eab9a3451f37f5db8a826bf76d16414d8c149cc203e096efe1edbdc44"
+  },
+  {
+    "root": "soulidity_standard",
+    "relative": "sources/soul.move",
+    "sha256": "0574d86b7d40dd42e22774b3bd68d9f5e7705fda2cf805cfe58a31d3e777c2c7"
+  },
+  {
+    "root": "soulidity_foundation",
+    "relative": "Move.toml",
+    "sha256": "b9af9eec5599828254b2e398848028cbb9c62abb879be7e41c41858f0fdfb763"
+  },
+  {
+    "root": "soulidity_foundation",
+    "relative": "Move.lock",
+    "sha256": "5c6ddee0be90a667c14029867ce966a797aa4cd7f367b9f2ccb60742fb0683fa"
+  },
+  {
+    "root": "soulidity_foundation",
+    "relative": "sources/economics.move",
+    "sha256": "18a683402ff9438f5945e8070426a33e532ef851b5b4b810d7be5c85e98de039"
+  },
+  {
+    "root": "soulidity_foundation",
+    "relative": "sources/package_roles.move",
+    "sha256": "4569fb705519bf0fed418083c38b2d98fab001d25f1a0cc9b06ce9f50003e229"
+  },
+  {
+    "root": "soulidity_foundation",
+    "relative": "sources/revenue.move",
+    "sha256": "9e307e4d6c944419179bc9e4fbcc39e006e6e118c9d6d083ee3e23189515fdaa"
+  },
+  {
+    "root": "soulidity_foundation",
+    "relative": "sources/source_authority.move",
+    "sha256": "e2b4ee56df6962bba16695ca4cec4f6e1816c6fa6dd9b83cd8eeb8147c32883b"
+  }
+]

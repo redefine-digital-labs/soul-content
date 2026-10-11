@@ -1,0 +1,39 @@
+{
+  "actual_root": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content",
+  "temporary_candidate_root": "/private/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-frozen-input-guard-vi55kkld",
+  "scope": "CONTENT exact external locator and complete offline vendor input inventory hardening only",
+  "files": [
+    {
+      "source": "/private/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-frozen-input-guard-vi55kkld/tools/verify_candidate.py",
+      "destination": "tools/verify_candidate.py",
+      "sha256": "d435046d937919872dbe1d3b380cba3a2779877feda2252f87eafd32d0f892f4",
+      "expected_destination_before_sha256": "25db9f10e98d8f9af1c2ea9c5e88b71d5dbec9a603dae246622e2115bf7bf183",
+      "destination_must_be_absent": false
+    },
+    {
+      "source": "/private/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-frozen-input-guard-vi55kkld/tools/test_verify_candidate_frozen_inputs.py",
+      "destination": "tools/test_verify_candidate_frozen_inputs.py",
+      "sha256": "4175dbc757d835a156eda56d4a2b7ebe5dfaeb8656cd1b731d5c06eae763c62f",
+      "expected_destination_before_sha256": null,
+      "destination_must_be_absent": true
+    },
+    {
+      "source": "/private/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-frozen-input-guard-vi55kkld/frozen-input-control-tests.json",
+      "destination": "evidence/frozen-input-guard-control-tests.json",
+      "sha256": "5c005303a51021fc43ceae0b7b6e664c187439a7db57c50d7b1685403d2d120d",
+      "expected_destination_before_sha256": null,
+      "destination_must_be_absent": true
+    }
+  ],
+  "before_tool_copy": "/private/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-frozen-input-guard-vi55kkld/before-verify_candidate.py",
+  "diff": "/private/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-frozen-input-guard-vi55kkld/candidate.diff",
+  "sui_business_commands_executed": 0,
+  "business_19_vm_rerun": false,
+  "no_shared_writes": true,
+  "import_verification": [
+    "Verify target tools/verify_candidate.py still equals expected before SHA256 before replacing.",
+    "Import exact files only, keeping offline-vendor and packages/frozen-original inputs read-only.",
+    "Review candidate.diff; run the imported control runner against actual_root with a fresh temporary report path if independent confirmation is needed.",
+    "Do not rewrite or overwrite existing production/19VM evidence."
+  ]
+}

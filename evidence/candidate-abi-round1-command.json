@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui",
+    "move",
+    "summary",
+    "--bytecode",
+    "--path",
+    "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/evidence/candidate-production-bytecode",
+    "--output-directory",
+    "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/evidence/candidate-abi"
+  ],
+  "exit_code": 134,
+  "failure": "move-model-2/src/model.rs:793:25: depends on missing package 0x1",
+  "cause": "ABI summary over exported unpublished modules omitted framework bytecode, not a production compiler or contract failure",
+  "next_fix": "source package summary supplies actual frozen dependency graph",
+  "raw_output_preserved_in": "candidate-abi-round1.stderr.log"
+}

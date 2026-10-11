@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui",
+    "move",
+    "test",
+    "--path",
+    "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/packages/soulidity_content"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 20.551438093185425,
+  "default_gas_limit_unchanged": true
+}

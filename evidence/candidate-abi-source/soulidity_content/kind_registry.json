@@ -1,0 +1,1720 @@
+{
+  "id": {
+    "address": "soulidity_content",
+    "name": "kind_registry"
+  },
+  "doc": null,
+  "immediate_dependencies": [
+    {
+      "address": "soulidity_content",
+      "name": "permissions"
+    },
+    {
+      "address": "std",
+      "name": "string"
+    },
+    {
+      "address": "sui",
+      "name": "event"
+    },
+    {
+      "address": "sui",
+      "name": "object"
+    },
+    {
+      "address": "sui",
+      "name": "table"
+    },
+    {
+      "address": "sui",
+      "name": "transfer"
+    },
+    {
+      "address": "sui",
+      "name": "tx_context"
+    }
+  ],
+  "attributes": [],
+  "functions": {
+    "kind_soul_doc": {
+      "source_index": 0,
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u32"
+      ]
+    },
+    "kind_memory": {
+      "source_index": 1,
+      "index": 1,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u32"
+      ]
+    },
+    "kind_skill": {
+      "source_index": 2,
+      "index": 2,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u32"
+      ]
+    },
+    "kind_sprite": {
+      "source_index": 3,
+      "index": 3,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u32"
+      ]
+    },
+    "kind_audio": {
+      "source_index": 4,
+      "index": 4,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u32"
+      ]
+    },
+    "first_custom_kind": {
+      "source_index": 5,
+      "index": 5,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u32"
+      ]
+    },
+    "op_append": {
+      "source_index": 6,
+      "index": 6,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "op_delete": {
+      "source_index": 7,
+      "index": 7,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "op_purge": {
+      "source_index": 8,
+      "index": 8,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "op_active_bind": {
+      "source_index": 9,
+      "index": 9,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "read_owner": {
+      "source_index": 10,
+      "index": 10,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "read_grant": {
+      "source_index": 11,
+      "index": 11,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "read_paid": {
+      "source_index": 12,
+      "index": 12,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "read_public": {
+      "source_index": 13,
+      "index": 13,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "descriptor_kind": {
+      "source_index": 14,
+      "index": 14,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindDescriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u32"
+      ]
+    },
+    "protocol_version": {
+      "source_index": 15,
+      "index": 15,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [],
+      "return_": [
+        "u64"
+      ]
+    },
+    "descriptor_version": {
+      "source_index": 16,
+      "index": 16,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindDescriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "descriptor_name": {
+      "source_index": 17,
+      "index": 17,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindDescriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Reference": [
+            false,
+            {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "string"
+                },
+                "name": "String",
+                "type_arguments": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "descriptor_op_mask": {
+      "source_index": 18,
+      "index": 18,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindDescriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "descriptor_read_mode_mask": {
+      "source_index": 19,
+      "index": 19,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindDescriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "descriptor_has_active_binding": {
+      "source_index": 20,
+      "index": 20,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindDescriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "bool"
+      ]
+    },
+    "descriptor_requires_download_policy": {
+      "source_index": 21,
+      "index": 21,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindDescriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "bool"
+      ]
+    },
+    "descriptor_default_grant_scope_mask": {
+      "source_index": 22,
+      "index": 22,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindDescriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "descriptor_deprecated": {
+      "source_index": 23,
+      "index": 23,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "d",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindDescriptor",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "bool"
+      ]
+    },
+    "registry_id": {
+      "source_index": 24,
+      "index": 24,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "self",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "registry_version": {
+      "source_index": 25,
+      "index": 25,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "self",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "next_kind": {
+      "source_index": 26,
+      "index": 26,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "self",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u32"
+      ]
+    },
+    "contains_kind": {
+      "source_index": 27,
+      "index": 27,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "self",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u32"
+        }
+      ],
+      "return_": [
+        "bool"
+      ]
+    },
+    "contains_name": {
+      "source_index": 28,
+      "index": 28,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "self",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "std",
+                "name": "string"
+              },
+              "name": "String",
+              "type_arguments": []
+            }
+          }
+        }
+      ],
+      "return_": [
+        "bool"
+      ]
+    },
+    "borrow_descriptor": {
+      "source_index": 29,
+      "index": 29,
+      "doc": " Aborts with `EKindNotFound` if `kind` is not registered.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "self",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u32"
+        }
+      ],
+      "return_": [
+        {
+          "Reference": [
+            false,
+            {
+              "Datatype": {
+                "module": {
+                  "address": "soulidity_content",
+                  "name": "kind_registry"
+                },
+                "name": "KindDescriptor",
+                "type_arguments": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "kind_for_name": {
+      "source_index": 30,
+      "index": 30,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "self",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "std",
+                "name": "string"
+              },
+              "name": "String",
+              "type_arguments": []
+            }
+          }
+        }
+      ],
+      "return_": [
+        "u32"
+      ]
+    },
+    "init": {
+      "source_index": 31,
+      "index": 31,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "ctx",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "insert_descriptor_unchecked": {
+      "source_index": 32,
+      "index": 32,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "registry",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u32"
+        },
+        {
+          "name": "name",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "std",
+                "name": "string"
+              },
+              "name": "String",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "op_mask",
+          "type_": "u64"
+        },
+        {
+          "name": "read_mode_mask",
+          "type_": "u64"
+        },
+        {
+          "name": "has_active_binding",
+          "type_": "bool"
+        },
+        {
+          "name": "requires_download_policy",
+          "type_": "bool"
+        },
+        {
+          "name": "default_grant_scope_mask",
+          "type_": "u64"
+        }
+      ],
+      "return_": []
+    },
+    "register_kind": {
+      "source_index": 33,
+      "index": 33,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "registry",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "cap",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindAdminCap",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "std",
+                "name": "string"
+              },
+              "name": "String",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "op_mask",
+          "type_": "u64"
+        },
+        {
+          "name": "read_mode_mask",
+          "type_": "u64"
+        },
+        {
+          "name": "has_active_binding",
+          "type_": "bool"
+        },
+        {
+          "name": "requires_download_policy",
+          "type_": "bool"
+        },
+        {
+          "name": "default_grant_scope_mask",
+          "type_": "u64"
+        },
+        {
+          "name": "_ctx",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u32"
+      ]
+    },
+    "deprecate_kind": {
+      "source_index": 34,
+      "index": 34,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "registry",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "cap",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindAdminCap",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u32"
+        },
+        {
+          "name": "_ctx",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "reactivate_kind": {
+      "source_index": 35,
+      "index": 35,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "registry",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "cap",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindAdminCap",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u32"
+        },
+        {
+          "name": "_ctx",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "assert_kind_active": {
+      "source_index": 36,
+      "index": 36,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "registry",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "kind_registry"
+                  },
+                  "name": "KindRegistry",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "kind",
+          "type_": "u32"
+        }
+      ],
+      "return_": []
+    },
+    "assert_valid_kind_name": {
+      "source_index": 37,
+      "index": 37,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "name",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "std",
+                    "name": "string"
+                  },
+                  "name": "String",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "assert_descriptor_well_formed": {
+      "source_index": 38,
+      "index": 38,
+      "doc": " Cross-field validation shared by built-in pre-registration and admin\n `register_kind`. Enforces the Phase 2 op/read-mode invariants.",
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "op_mask",
+          "type_": "u64"
+        },
+        {
+          "name": "read_mode_mask",
+          "type_": "u64"
+        },
+        {
+          "name": "has_active_binding",
+          "type_": "bool"
+        },
+        {
+          "name": "requires_download_policy",
+          "type_": "bool"
+        },
+        {
+          "name": "default_grant_scope_mask",
+          "type_": "u64"
+        }
+      ],
+      "return_": []
+    },
+    "assert_valid_default_grant_scope": {
+      "source_index": 39,
+      "index": 39,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "mask",
+          "type_": "u64"
+        },
+        {
+          "name": "read_mode_mask",
+          "type_": "u64"
+        }
+      ],
+      "return_": []
+    },
+    "is_single_bit": {
+      "source_index": 40,
+      "index": 40,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "mask",
+          "type_": "u64"
+        }
+      ],
+      "return_": [
+        "bool"
+      ]
+    }
+  },
+  "structs": {
+    "KindDescriptor": {
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "version": {
+            "index": 0,
+            "doc": null,
+            "type_": "u64"
+          },
+          "kind": {
+            "index": 1,
+            "doc": null,
+            "type_": "u32"
+          },
+          "name": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "string"
+                },
+                "name": "String",
+                "type_arguments": []
+              }
+            }
+          },
+          "op_mask": {
+            "index": 3,
+            "doc": " Bit-OR of `OP_*` constants. Cached into `ContentSlot.op_mask` at\n append time and consulted from there during delete/purge/set_active.",
+            "type_": "u64"
+          },
+          "read_mode_mask": {
+            "index": 4,
+            "doc": " Bit-OR of `READ_*` constants. Each slot picks an in-mask non-empty\n subset at append time (`slot_read_mode_mask`) which is also cached\n onto the slot. Must always include `READ_OWNER`.",
+            "type_": "u64"
+          },
+          "has_active_binding": {
+            "index": 5,
+            "doc": " Equivalent to `(op_mask & OP_ACTIVE_BIND != 0)`. Kept as an explicit\n boolean so existing callers (content::set_active mismatch check)\n don't need to reach into op_mask.",
+            "type_": "bool"
+          },
+          "requires_download_policy": {
+            "index": 6,
+            "doc": null,
+            "type_": "bool"
+          },
+          "default_grant_scope_mask": {
+            "index": 7,
+            "doc": " Cached on append into `ContentSlot.grant_scope_mask`. Must be a\n single grant-scope bit (`SCOPE_SEAL`/`MEMORY`/`SKILLS`/`ASSETS`) when\n `read_mode_mask` permits grant or paid reads, otherwise must be 0.",
+            "type_": "u64"
+          },
+          "deprecated": {
+            "index": 8,
+            "doc": null,
+            "type_": "bool"
+          }
+        }
+      }
+    },
+    "KindRegistry": {
+      "index": 1,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Key"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "id": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "UID",
+                "type_arguments": []
+              }
+            }
+          },
+          "version": {
+            "index": 1,
+            "doc": null,
+            "type_": "u64"
+          },
+          "next_kind": {
+            "index": 2,
+            "doc": " Monotonically increasing custom-kind allocator. Starts at 16.",
+            "type_": "u32"
+          },
+          "kinds": {
+            "index": 3,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "table"
+                },
+                "name": "Table",
+                "type_arguments": [
+                  {
+                    "phantom": true,
+                    "argument": "u32"
+                  },
+                  {
+                    "phantom": true,
+                    "argument": {
+                      "Datatype": {
+                        "module": {
+                          "address": "soulidity_content",
+                          "name": "kind_registry"
+                        },
+                        "name": "KindDescriptor",
+                        "type_arguments": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "name_to_kind": {
+            "index": 4,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "table"
+                },
+                "name": "Table",
+                "type_arguments": [
+                  {
+                    "phantom": true,
+                    "argument": {
+                      "Datatype": {
+                        "module": {
+                          "address": "std",
+                          "name": "string"
+                        },
+                        "name": "String",
+                        "type_arguments": []
+                      }
+                    }
+                  },
+                  {
+                    "phantom": true,
+                    "argument": "u32"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "KindAdminCap": {
+      "index": 2,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Key",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "id": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "UID",
+                "type_arguments": []
+              }
+            }
+          },
+          "registry": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "KindRegistryCreated": {
+      "index": 3,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "registry_id": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "admin_cap_id": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "KindRegistered": {
+      "index": 4,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "registry_id": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "kind": {
+            "index": 1,
+            "doc": null,
+            "type_": "u32"
+          },
+          "name": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "string"
+                },
+                "name": "String",
+                "type_arguments": []
+              }
+            }
+          },
+          "op_mask": {
+            "index": 3,
+            "doc": null,
+            "type_": "u64"
+          },
+          "read_mode_mask": {
+            "index": 4,
+            "doc": null,
+            "type_": "u64"
+          },
+          "has_active_binding": {
+            "index": 5,
+            "doc": null,
+            "type_": "bool"
+          },
+          "requires_download_policy": {
+            "index": 6,
+            "doc": null,
+            "type_": "bool"
+          },
+          "default_grant_scope_mask": {
+            "index": 7,
+            "doc": null,
+            "type_": "u64"
+          }
+        }
+      }
+    },
+    "KindDeprecated": {
+      "index": 5,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "registry_id": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "kind": {
+            "index": 1,
+            "doc": null,
+            "type_": "u32"
+          },
+          "name": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "string"
+                },
+                "name": "String",
+                "type_arguments": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "KindReactivated": {
+      "index": 6,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "registry_id": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "kind": {
+            "index": 1,
+            "doc": null,
+            "type_": "u32"
+          },
+          "name": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "string"
+                },
+                "name": "String",
+                "type_arguments": []
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "enums": {}
+}

@@ -1,0 +1,92 @@
+{
+  "reference": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/source-authority.json",
+  "reference_sha256": "45a3dda91d4b21e048547f69ad500b20264a707bd80363dc101effbc5ee5c8b3",
+  "modules": [
+    {
+      "module": "authority",
+      "assigned_group": "CONTENT",
+      "frozen_sha256": "72b14a54093a542ffc065553920481cdffc3383eb6cb2f7d05f36c2355e97bfe",
+      "authority_record_sha256": "72b14a54093a542ffc065553920481cdffc3383eb6cb2f7d05f36c2355e97bfe",
+      "match": true
+    },
+    {
+      "module": "authorization",
+      "assigned_group": "CONTENT",
+      "frozen_sha256": "e1e337cd3e940f26f5eabad5c0fd486b192a0b6cf8327688c62e91ff310cb0dd",
+      "authority_record_sha256": "e1e337cd3e940f26f5eabad5c0fd486b192a0b6cf8327688c62e91ff310cb0dd",
+      "match": true
+    },
+    {
+      "module": "blob_custody",
+      "assigned_group": "CONTENT",
+      "frozen_sha256": "81ab5b2b929a7b67c74ab6c6bafea67891d56ce751ada2da99ebf0690eca2737",
+      "authority_record_sha256": "81ab5b2b929a7b67c74ab6c6bafea67891d56ce751ada2da99ebf0690eca2737",
+      "match": true
+    },
+    {
+      "module": "document",
+      "assigned_group": "CONTENT",
+      "frozen_sha256": "449575a36d14411276ad5c814ccdaeb4eff07d662d4b8bffeb72068e7bdb39e0",
+      "authority_record_sha256": "449575a36d14411276ad5c814ccdaeb4eff07d662d4b8bffeb72068e7bdb39e0",
+      "match": true
+    },
+    {
+      "module": "founding_library",
+      "assigned_group": "NATIVE.PRODUCER",
+      "frozen_sha256": "bcb8c19a0b2647bf568bbac269f02edc920192cef215d39b66a17114a157f461",
+      "authority_record_sha256": "bcb8c19a0b2647bf568bbac269f02edc920192cef215d39b66a17114a157f461",
+      "match": true
+    },
+    {
+      "module": "kind_registry",
+      "assigned_group": "CONTENT",
+      "frozen_sha256": "9fa9db9d6d391bc27257ff7cb22552744b01e12ac7cf902a19adbbd0a08cad57",
+      "authority_record_sha256": "9fa9db9d6d391bc27257ff7cb22552744b01e12ac7cf902a19adbbd0a08cad57",
+      "match": true
+    },
+    {
+      "module": "loadout",
+      "assigned_group": "EXTENSIONS",
+      "frozen_sha256": "4ded2bd91fc5557c126db78ae8cbb4abc9807bb34957e230ce46f94309ba7d63",
+      "authority_record_sha256": "4ded2bd91fc5557c126db78ae8cbb4abc9807bb34957e230ce46f94309ba7d63",
+      "match": true
+    },
+    {
+      "module": "paged_store",
+      "assigned_group": "CONTENT",
+      "frozen_sha256": "33d15484e8d5868d0202654373577a024077b8d43ae680ee68e974fbfe7fda0a",
+      "authority_record_sha256": "33d15484e8d5868d0202654373577a024077b8d43ae680ee68e974fbfe7fda0a",
+      "match": true
+    },
+    {
+      "module": "paid_access",
+      "assigned_group": "CONTENT",
+      "frozen_sha256": "3b39ce29771d0a22f668958b2198aafaa82deb75d5121d83a76882be47408c09",
+      "authority_record_sha256": "3b39ce29771d0a22f668958b2198aafaa82deb75d5121d83a76882be47408c09",
+      "match": true
+    },
+    {
+      "module": "permissions",
+      "assigned_group": "CONTENT",
+      "frozen_sha256": "5b0bf758bfed7bd53ad1af4618beb4552a0125e1fcccc8c49e830f370f786dff",
+      "authority_record_sha256": "5b0bf758bfed7bd53ad1af4618beb4552a0125e1fcccc8c49e830f370f786dff",
+      "match": true
+    },
+    {
+      "module": "state_configuration",
+      "assigned_group": "EXTENSIONS",
+      "frozen_sha256": "89963eee546f1b5a5be4a5dbced26b7beb25950a1001ca6498cef4bd15a836ad",
+      "authority_record_sha256": "89963eee546f1b5a5be4a5dbced26b7beb25950a1001ca6498cef4bd15a836ad",
+      "match": true
+    },
+    {
+      "module": "storage",
+      "assigned_group": "CONTENT",
+      "frozen_sha256": "dba26fb0baac1a181363a43fb05353e77f078f527984442f79ca4647f25851ee",
+      "authority_record_sha256": "dba26fb0baac1a181363a43fb05353e77f078f527984442f79ca4647f25851ee",
+      "match": true
+    }
+  ],
+  "nine_CONTENT_count": 9,
+  "all_source_matches": true
+}

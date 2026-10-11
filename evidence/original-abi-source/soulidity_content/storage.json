@@ -1,0 +1,643 @@
+{
+  "id": {
+    "address": "soulidity_content",
+    "name": "storage"
+  },
+  "doc": " Typed Walrus certification and expiry, using Walrus epochs (not Sui epochs).",
+  "immediate_dependencies": [
+    {
+      "address": "std",
+      "name": "option"
+    },
+    {
+      "address": "sui",
+      "name": "object"
+    },
+    {
+      "address": "walrus",
+      "name": "blob"
+    },
+    {
+      "address": "walrus",
+      "name": "system"
+    }
+  ],
+  "attributes": [],
+  "functions": {
+    "certified": {
+      "source_index": 0,
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "blob",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "walrus",
+                    "name": "blob"
+                  },
+                  "name": "Blob",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "system",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "walrus",
+                    "name": "system"
+                  },
+                  "name": "System",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "sha256",
+          "type_": {
+            "vector": "u8"
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_content",
+              "name": "storage"
+            },
+            "name": "Reference",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "certified_batch": {
+      "source_index": 1,
+      "index": 1,
+      "doc": " Actual certification of each Blob; one epoch read during this invocation.\n References remain copyable metadata and cannot substitute for later custody.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "blobs",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "vector": {
+                  "Datatype": {
+                    "module": {
+                      "address": "walrus",
+                      "name": "blob"
+                    },
+                    "name": "Blob",
+                    "type_arguments": []
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "system",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "walrus",
+                    "name": "system"
+                  },
+                  "name": "System",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "hashes",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "vector": {
+                  "vector": "u8"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "vector": {
+            "Datatype": {
+              "module": {
+                "address": "soulidity_content",
+                "name": "storage"
+              },
+              "name": "Reference",
+              "type_arguments": []
+            }
+          }
+        }
+      ]
+    },
+    "assert_current": {
+      "source_index": 2,
+      "index": 2,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "storage"
+                  },
+                  "name": "Reference",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "blob",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "walrus",
+                    "name": "blob"
+                  },
+                  "name": "Blob",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "system",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "walrus",
+                    "name": "system"
+                  },
+                  "name": "System",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "assert_current_batch": {
+      "source_index": 3,
+      "index": 3,
+      "doc": " Validate every actual Blob against the same current immutable System input.\n The epoch never escapes this invocation and cannot be reused after a later\n System mutation in the same PTB. This returns no token or authorization.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "references",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "vector": {
+                  "Datatype": {
+                    "module": {
+                      "address": "soulidity_content",
+                      "name": "storage"
+                    },
+                    "name": "Reference",
+                    "type_arguments": []
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "blobs",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "vector": {
+                  "Datatype": {
+                    "module": {
+                      "address": "walrus",
+                      "name": "blob"
+                    },
+                    "name": "Blob",
+                    "type_arguments": []
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "system",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "walrus",
+                    "name": "system"
+                  },
+                  "name": "System",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "assert_current_at_epoch": {
+      "source_index": 4,
+      "index": 4,
+      "doc": " Package-internal only. Public validators obtain the actual epoch during\n their synchronous call; foreign packages cannot submit a claimed epoch.",
+      "attributes": [],
+      "visibility": "Package",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "storage"
+                  },
+                  "name": "Reference",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "blob",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "walrus",
+                    "name": "blob"
+                  },
+                  "name": "Blob",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "epoch",
+          "type_": "u32"
+        }
+      ],
+      "return_": []
+    },
+    "hash": {
+      "source_index": 5,
+      "index": 5,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "storage"
+                  },
+                  "name": "Reference",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "vector": "u8"
+        }
+      ]
+    },
+    "bytes": {
+      "source_index": 6,
+      "index": 6,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "storage"
+                  },
+                  "name": "Reference",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    },
+    "blob_id": {
+      "source_index": 7,
+      "index": 7,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "storage"
+                  },
+                  "name": "Reference",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u256"
+      ]
+    },
+    "object_id": {
+      "source_index": 8,
+      "index": 8,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "storage"
+                  },
+                  "name": "Reference",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "certified_epoch": {
+      "source_index": 9,
+      "index": 9,
+      "doc": " Certification-time snapshots. Renewed availability is checked against the stored Blob.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "storage"
+                  },
+                  "name": "Reference",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u32"
+      ]
+    },
+    "original_end_epoch": {
+      "source_index": 10,
+      "index": 10,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "storage"
+                  },
+                  "name": "Reference",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u32"
+      ]
+    },
+    "assert_digest": {
+      "source_index": 11,
+      "index": 11,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "value",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "vector": "u8"
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    }
+  },
+  "structs": {
+    "Reference": {
+      "index": 0,
+      "doc": " SHA-256 is a publisher's byte commitment; certification proves availability\n of the Blob ID, not equality between that SHA-256 and the Walrus root hash.",
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "object": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "blob_id": {
+            "index": 1,
+            "doc": null,
+            "type_": "u256"
+          },
+          "sha256": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "vector": "u8"
+            }
+          },
+          "bytes": {
+            "index": 3,
+            "doc": null,
+            "type_": "u64"
+          },
+          "certified_epoch": {
+            "index": 4,
+            "doc": null,
+            "type_": "u32"
+          },
+          "end_epoch": {
+            "index": 5,
+            "doc": null,
+            "type_": "u32"
+          }
+        }
+      }
+    }
+  },
+  "enums": {}
+}

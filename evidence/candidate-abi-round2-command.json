@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui",
+    "move",
+    "summary",
+    "--path",
+    "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/packages/soulidity_content",
+    "--output-directory",
+    "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/evidence/candidate-abi-source"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 19.398563146591187,
+  "rpc": false,
+  "scope": "source-model ABI summary; production exported bytecode separately compared"
+}

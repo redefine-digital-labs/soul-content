@@ -1,0 +1,41 @@
+[NOTE] Dependencies on Sui, MoveStdlib, Bridge, DeepBook, and SuiSystem are automatically added, but this feature is disabled for your package because you have explicitly included dependencies on Sui. Consider removing these dependencies from `Move.toml`.
+INCLUDING DEPENDENCY MoveStdlib
+INCLUDING DEPENDENCY SoulidityContent
+INCLUDING DEPENDENCY SoulidityFoundation
+INCLUDING DEPENDENCY SoulidityStandard
+INCLUDING DEPENDENCY Sui
+INCLUDING DEPENDENCY WAL
+INCLUDING DEPENDENCY Walrus
+BUILDING SoulidityNative
+warning[WC04037]: deprecated usage
+   ┌─ ./sources/registry.move:81:44
+   │
+81 │     assert!(nonce.length()==16,ENonce);df::exists_(&r.id,ContentMintKey{author,nonce})
+   │                                            ^^^^^^^ The function 'sui::dynamic_field::exists_' is deprecated: Renamed to `exists`
+   │
+   = This warning can be suppressed with '#[allow(deprecated_usage)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[WC04037]: deprecated usage
+   ┌─ ./sources/registry.move:84:58
+   │
+84 │ public fun source_joined(r:&Registry,source:ID):bool{df::exists_(&r.id,JoinedSourceKey{source})}
+   │                                                          ^^^^^^^ The function 'sui::dynamic_field::exists_' is deprecated: Renamed to `exists`
+   │
+   = This warning can be suppressed with '#[allow(deprecated_usage)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[WC04037]: deprecated usage
+   ┌─ ./sources/registry.move:88:68
+   │
+88 │     let key=ContentMintKey{author:ctx.sender(),nonce};assert!(!df::exists_(&r.id,key),ENonce);df::add(&mut r.id,key,true);
+   │                                                                    ^^^^^^^ The function 'sui::dynamic_field::exists_' is deprecated: Renamed to `exists`
+   │
+   = This warning can be suppressed with '#[allow(deprecated_usage)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[WC04037]: deprecated usage
+   ┌─ ./sources/registry.move:99:106
+   │
+99 │     assert!(kiosk::has_item_with_type<T>(k,source),EJoined);let key=JoinedSourceKey{source};assert!(!df::exists_(&r.id,key),EJoined);df::add(&mut r.id,key,true);
+   │                                                                                                          ^^^^^^^ The function 'sui::dynamic_field::exists_' is deprecated: Renamed to `exists`
+   │
+   = This warning can be suppressed with '#[allow(deprecated_usage)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+

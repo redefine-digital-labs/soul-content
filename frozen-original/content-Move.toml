@@ -1,0 +1,12 @@
+[package]
+name = "SoulidityContent"
+edition = "2024"
+
+[dependencies]
+SoulidityStandard = { local = "../soulidity_standard" }
+SoulidityFoundation = { local = "../soulidity_foundation" }
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "2a0becb2fcc6989e492981104af67f62f2c9511a", override = true }
+Walrus = { git = "https://github.com/MystenLabs/walrus.git", subdir = "mainnet-contracts/walrus", rev = "a19764ff77f501a79db88dc6d922a2c73848e989" }
+
+[addresses]
+soulidity_content = "0x0"

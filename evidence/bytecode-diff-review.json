@@ -1,0 +1,107 @@
+{
+  "candidate_unpublished_export_modules": 14,
+  "original_unpublished_export_modules": 17,
+  "root_content_modules": [
+    "authority",
+    "authorization",
+    "blob_custody",
+    "document",
+    "kind_registry",
+    "paged_store",
+    "paid_access",
+    "permissions",
+    "storage"
+  ],
+  "comparisons": [
+    {
+      "module": "soul",
+      "original_sha256": "e9e9f624e374aae2206e8124e2a4841005e47575a1fecdb1bc9ec3e05c7e8877",
+      "candidate_sha256": "e9e9f624e374aae2206e8124e2a4841005e47575a1fecdb1bc9ec3e05c7e8877",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "authority",
+      "original_sha256": "856f63a744f0e50bc49c50cbb02807a5318ebaa115c0f6386c8223ff7c8ad986",
+      "candidate_sha256": "856f63a744f0e50bc49c50cbb02807a5318ebaa115c0f6386c8223ff7c8ad986",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "permissions",
+      "original_sha256": "77ccb458d7d3944aa0185a39bb6cfff2699da2c9cfaab5124c025b13df7e67bd",
+      "candidate_sha256": "77ccb458d7d3944aa0185a39bb6cfff2699da2c9cfaab5124c025b13df7e67bd",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "authorization",
+      "original_sha256": "a5623a3faf463f19ec15aafe13b6719150d91392569b6256a2359e767ceea8ac",
+      "candidate_sha256": "a5623a3faf463f19ec15aafe13b6719150d91392569b6256a2359e767ceea8ac",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "storage",
+      "original_sha256": "5517a9600c4177bf8ac4056d43edb71d8f27d0a209f75e93e11768d3616af112",
+      "candidate_sha256": "5517a9600c4177bf8ac4056d43edb71d8f27d0a209f75e93e11768d3616af112",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "blob_custody",
+      "original_sha256": "fc719108f8298cd28509afe3cfb8a23b10a7654643e41eb6e1c4f85e080c8edc",
+      "candidate_sha256": "fc719108f8298cd28509afe3cfb8a23b10a7654643e41eb6e1c4f85e080c8edc",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "kind_registry",
+      "original_sha256": "3df16dd9c890ff13c0edbefc93da4461937da249abc22e7e0169030aa674a896",
+      "candidate_sha256": "3df16dd9c890ff13c0edbefc93da4461937da249abc22e7e0169030aa674a896",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "document",
+      "original_sha256": "ef5b50511a52f7a8cdba1fdbddca5422c4828f276d5313e5b3502b827069e9e7",
+      "candidate_sha256": "ef5b50511a52f7a8cdba1fdbddca5422c4828f276d5313e5b3502b827069e9e7",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "source_authority",
+      "original_sha256": "2f111260e7d4cd6d59dcc19c0a1fa37c90545ebee95e3c33a78aced48fdfbeed",
+      "candidate_sha256": "2f111260e7d4cd6d59dcc19c0a1fa37c90545ebee95e3c33a78aced48fdfbeed",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "revenue",
+      "original_sha256": "35f67ad77ce563bc1c37c8aca75dab02699ecc7ed4f3e7994cc7ccebfb2e5447",
+      "candidate_sha256": "35f67ad77ce563bc1c37c8aca75dab02699ecc7ed4f3e7994cc7ccebfb2e5447",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "package_roles",
+      "original_sha256": "35cb56b616f87c58cd4d52762176255271c4190534f6cec5c647a099c30fca64",
+      "candidate_sha256": "35cb56b616f87c58cd4d52762176255271c4190534f6cec5c647a099c30fca64",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "economics",
+      "original_sha256": "36c650cf9beb81f1e9f9ff1fe30e20725a5981e83905f4dc6d77fdb2ffd29751",
+      "candidate_sha256": "36c650cf9beb81f1e9f9ff1fe30e20725a5981e83905f4dc6d77fdb2ffd29751",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "paged_store",
+      "original_sha256": "3ce87a38d23136d1d7eceace909f49c4d839964f15e9189e7caaa2425b94f349",
+      "candidate_sha256": "3ce87a38d23136d1d7eceace909f49c4d839964f15e9189e7caaa2425b94f349",
+      "exact_byte_equal": true
+    },
+    {
+      "module": "paid_access",
+      "original_sha256": "df4989d722697cb655c37007da5b8f051ea3d20a9927ca5d74e649bc994a4506",
+      "candidate_sha256": "df4989d722697cb655c37007da5b8f051ea3d20a9927ca5d74e649bc994a4506",
+      "exact_byte_equal": true
+    }
+  ],
+  "removed_from_content_root": [
+    "founding_library",
+    "loadout",
+    "state_configuration"
+  ],
+  "identity_limit": "These bytes use the same frozen local dependencies and unpublished addresses. Equality does not establish compatibility with any old published package/type/object. Independent fresh package identity and deployed dependency linkage remain unverified."
+}

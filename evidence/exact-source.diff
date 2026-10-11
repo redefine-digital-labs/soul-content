@@ -1,0 +1,291 @@
+--- original/sources/founding_library.move
++++ candidate/sources/founding_library.move
+@@ -1,92 +0,0 @@
+-/// Reusable real content custody for non-Maker creation. No canvas, Product,
+-/// publication artefact, shared reverse pointer or protocol issuance authority.
+-module soulidity_content::founding_library;
+-use std::bcs;
+-use std::hash;
+-use std::string::String;
+-use sui::clock::{Self,Clock};
+-use sui::dynamic_object_field as dof;
+-use sui::derived_object;
+-use sui::table::{Self,Table};
+-use walrus::blob::Blob;
+-use walrus::system::System;
+-use soulidity_standard::soul::Soul;
+-use soulidity_content::authority::{Self,Controller};
+-use soulidity_content::document::{Self,Record};
+-use soulidity_content::kind_registry::{Self,KindRegistry};
+-use soulidity_content::storage;
+-
+-const EVersion:u64=1;const EInvariant:u64=2;const EActive:u64=3;
+-const EBinding:u64=4;const EActor:u64=5;
+-public struct Name has copy,drop,store {kind:u32,name:String}
+-public struct Version has copy,drop,store {kind:u32,name:String,version:u64}
+-public struct BlobKey has copy,drop,store {index:u64}
+-public struct Entry has copy,drop,store {index:u64,hash:vector<u8>}
+-public struct Library has key,store {
+-    id:UID,root:ID,controller:Controller,revision:u64,
+-    records:Table<u64,Record>,counts:Table<Name,u64>,indices:Table<Version,u64>,
+-    active:Table<u32,u64>,entries:vector<Entry>,
+-}
+-/// Cannot be stored, dropped, transferred or converted to a visible library
+-/// without the private content operator and complete founding invariants.
+-public struct Founding {library:Library,actor:address}
+-public struct Commitment has drop {domain:vector<u8>,library:vector<u8>}
+-
+-public fun begin<W:drop,P:key>(w:W,parent:&P,root:&Soul,ctx:&mut TxContext):Founding {
+-    Founding{library:Library{id:object::new(ctx),root:object::id(root),controller:authority::bind(w,parent,root),revision:0,
+-        records:table::new(ctx),counts:table::new(ctx),indices:table::new(ctx),active:table::new(ctx),entries:vector[]},actor:ctx.sender()}
+-}
+-/// The actual producer supplies its private registry UID internally. Allocate
+-/// directly in this defining module: Sui forbids packing an arbitrary UID
+-/// received as a function argument, including a UID allocated in another module.
+-public fun begin_derived<W:drop,P:key,K:copy+drop+store>(w:W,parent:&P,root:&Soul,registry:&mut UID,key:K,ctx:&mut TxContext):Founding {
+-    Founding{library:Library{id:derived_object::claim(registry,key),root:object::id(root),controller:authority::bind(w,parent,root),revision:0,
+-        records:table::new(ctx),counts:table::new(ctx),indices:table::new(ctx),active:table::new(ctx),entries:vector[]},actor:ctx.sender()}
+-}
+-public fun pending_id(f:&Founding):ID{object::id(&f.library)}
+-public fun root(l:&Library):ID{l.root}
+-public fun revision(l:&Library):u64{l.revision}
+-public fun count(l:&Library):u64{l.entries.length()}
+-public fun version_count(l:&Library,kind:u32,name:String):u64{let key=Name{kind,name};if(l.counts.contains(key))*l.counts.borrow(key) else 0}
+-public fun index(l:&Library,kind:u32,name:String,version:u64):Option<u64>{let key=Version{kind,name,version};if(l.indices.contains(key))option::some(*l.indices.borrow(key)) else option::none()}
+-public fun record(l:&Library,index:u64):&Record{l.records.borrow(index)}
+-public fun active(l:&Library,kind:u32):Option<u64>{if(l.active.contains(kind))option::some(*l.active.borrow(kind)) else option::none()}
+-public fun seal_id(l:&Library,index:u64):vector<u8>{document::seal_id(object::id(l),record(l,index))}
+-public fun blob_id(l:&Library,index:u64):ID{object::id(dof::borrow<BlobKey,Blob>(&l.id,BlobKey{index}))}
+-public fun assert_binding(l:&Library,parent:ID,root:ID){assert!(l.root==root && authority::root(&l.controller)==root && authority::parent(&l.controller)==parent,EBinding)}
+-public fun commitment(l:&Library):vector<u8>{hash::sha2_256(bcs::to_bytes(&Commitment{domain:b"soulidity/founding-library/v1",library:bcs::to_bytes(l)}))}
+-public fun assert_current(l:&Library,index:u64,system:&System){storage::assert_current(document::reference(record(l,index)),dof::borrow<BlobKey,Blob>(&l.id,BlobKey{index}),system)}
+-
+-fun append_impl(l:&mut Library,registry:&KindRegistry,kind:u32,name:String,read:u64,download:u8,blob:Blob,system:&System,sha256:vector<u8>,nonce:vector<u8>,envelope:vector<u8>,expected:u64,set_active:bool,clock:&Clock,initial:bool):u64 {
+-    let version=version_count(l,kind,name);assert!(version==expected,EVersion);
+-    let descriptor=kind_registry::borrow_descriptor(registry,kind);
+-    let reference=storage::certified(&blob,system,sha256);
+-    let r=if(initial && (kind==0 || kind==1)) {
+-        if(kind==0)assert!(version==0,EInvariant);
+-        document::new_initial_invariant(descriptor,name,version,reference,read,download,nonce,envelope,clock::timestamp_ms(clock))
+-    } else document::new(descriptor,name,version,reference,read,download,nonce,envelope,clock::timestamp_ms(clock),false);
+-    if(set_active)assert!(kind_registry::descriptor_has_active_binding(descriptor),EActive);
+-    let index=count(l);let digest=hash::sha2_256(bcs::to_bytes(&r));
+-    l.records.add(index,r);l.indices.add(Version{kind,name,version},index);
+-    let key=Name{kind,name};if(l.counts.contains(key))*l.counts.borrow_mut(key)=version+1 else l.counts.add(key,version+1);
+-    dof::add(&mut l.id,BlobKey{index},blob);l.entries.push_back(Entry{index,hash:digest});
+-    if(set_active){if(l.active.contains(kind))*l.active.borrow_mut(kind)=index else l.active.add(kind,index)};
+-    l.revision=l.revision+1;index
+-}
+-public fun append_initial<W:drop>(w:W,f:&mut Founding,registry:&KindRegistry,kind:u32,name:String,read:u64,download:u8,blob:Blob,system:&System,sha256:vector<u8>,nonce:vector<u8>,envelope:vector<u8>,expected:u64,set_active:bool,clock:&Clock,ctx:&TxContext):u64 {
+-    authority::assert_operator(w,&f.library.controller);assert!(ctx.sender()==f.actor,EActor);
+-    append_impl(&mut f.library,registry,kind,name,read,download,blob,system,sha256,nonce,envelope,expected,set_active,clock,true)
+-}
+-/// Read back actual custody and availability at the final boundary. A copyable
+-/// Record or precomputed namespace cannot replace the original certified Blob.
+-public fun finish<W:drop>(w:W,f:Founding,system:&System,ctx:&TxContext):Library {
+-    let Founding{library,actor}=f;authority::assert_operator(w,&library.controller);assert!(actor==ctx.sender(),EActor);
+-    assert!(version_count(&library,0,document::soul_doc_name())==1 && version_count(&library,1,document::memory_name())>=1,EInvariant);
+-    let mut i=0;while(i < count(&library)){assert_current(&library,i,system);i=i+1};library
+-}
+-/// Ordinary append never takes the founding bypass, even if the caller builds
+-/// a copyable Record using new_initial_invariant outside this library.
+-public fun append<W:drop>(w:W,l:&mut Library,registry:&KindRegistry,kind:u32,name:String,read:u64,download:u8,blob:Blob,system:&System,sha256:vector<u8>,nonce:vector<u8>,envelope:vector<u8>,expected:u64,set_active:bool,clock:&Clock):u64 {
+-    authority::assert_operator(w,&l.controller);
+-    append_impl(l,registry,kind,name,read,download,blob,system,sha256,nonce,envelope,expected,set_active,clock,false)
+-}
+--- original/sources/loadout.move
++++ candidate/sources/loadout.move
+@@ -1,118 +0,0 @@
+-/// Private named libraries are encrypted references, never equipment or licences.
+-/// Namespace remains stable within a custody scope, including uncommitted upload recovery.
+-module soulidity_content::loadout;
+-use sui::table::{Self,Table};
+-use sui::dynamic_object_field as dof;
+-use std::bcs;
+-use std::hash;
+-use soulidity_content::storage::{Self,Reference};
+-use walrus::blob::{Self,Blob};
+-use walrus::system::{Self,System};
+-use walrus::storage_resource::Storage;
+-const ERevision:u64=1;const ERequest:u64=2;const ECapture:u64=3;
+-const EReference:u64=4;const EHead:u64=5;const ESeal:u64=6;
+-public struct Library has key,store {id:UID,controller:soulidity_content::authority::Controller,root:ID,version:u16,count:u64,heads:Table<Scope,Head>,receipts:Table<Request,Receipt>}
+-public struct Scope has copy,drop,store {owner:address,generation:u64}
+-public struct Request has copy,drop,store {scope:Scope,id:vector<u8>}
+-public struct BlobKey has copy,drop,store {index:u64}
+-public struct Capture has copy,drop,store {composition:ID,revision:u64,commitment:vector<u8>}
+-public struct Receipt has copy,drop,store {index:u64,revision:u64,reference:Reference,capture:Option<Capture>}
+-public struct Head has copy,drop,store {revision:u64,request:vector<u8>,receipt:Receipt}
+-public struct Namespace has copy,drop,store {domain:vector<u8>,version:u16,root:ID,library:ID,scope:Scope}
+-public fun new<W:drop,P:key>(w:W,parent:&P,root:&soulidity_standard::soul::Soul,ctx:&mut TxContext):Library {
+-    let root_id=object::id(root);
+-    Library{controller:soulidity_content::authority::bind(w,parent,root),id:object::new(ctx),root:root_id,version:1,count:0,heads:table::new(ctx),receipts:table::new(ctx)}
+-}
+-public fun root(l:&Library):ID{l.root}
+-public fun version(l:&Library):u16{l.version}
+-public fun capture(composition:ID,revision:u64,commitment:vector<u8>):Capture {
+-    assert_hash(&commitment);assert!(composition!=object::id_from_address(@0x0),ECapture);Capture{composition,revision,commitment}
+-}
+-fun assert_hash(h:&vector<u8>){assert!(h.length()==32,EReference);let mut nonzero=false;h.do_ref!(|byte|{if(*byte!=0)nonzero=true});assert!(nonzero,EReference)}
+-public fun capture_composition(c:&Capture):ID{c.composition}
+-public fun capture_revision(c:&Capture):u64{c.revision}
+-public fun capture_commitment(c:&Capture):vector<u8>{c.commitment}
+-public fun head(l:&Library,owner:address,generation:u64):Option<Head> {
+-    let scope=Scope{owner,generation};if(l.heads.contains(scope))option::some(*l.heads.borrow(scope)) else option::none()
+-}
+-public fun current_revision(l:&Library,owner:address,generation:u64):u64 {
+-    let h=head(l,owner,generation);if(h.is_some())h.borrow().revision else 0
+-}
+-public fun receipt(l:&Library,owner:address,generation:u64,request:vector<u8>):Option<Receipt> {
+-    let key=Request{scope:Scope{owner,generation},id:request};
+-    if(l.receipts.contains(key))option::some(*l.receipts.borrow(key)) else option::none()
+-}
+-public fun head_revision(h:&Head):u64{h.revision}
+-public fun head_request(h:&Head):vector<u8>{h.request}
+-public fun head_receipt(h:&Head):Receipt{h.receipt}
+-public fun receipt_revision(r:&Receipt):u64{r.revision}
+-public fun receipt_reference(r:&Receipt):&Reference{&r.reference}
+-public fun receipt_capture(r:&Receipt):Option<Capture>{r.capture}
+-public fun seal_id(l:&Library,owner:address,generation:u64):vector<u8> {
+-    hash::sha2_256(bcs::to_bytes(&Namespace{domain:b"soulidity/private-named-loadouts/seal-id/v1",version:l.version,root:l.root,library:object::id(l),scope:Scope{owner,generation}}))
+-}
+-/// Package callers must obtain owner/generation from actual custody, never from a request.
+-fun internal_approve(id:vector<u8>,l:&Library,owner:address,generation:u64) {
+-    assert!(id==seal_id(l,owner,generation),ESeal)
+-}
+-/// Exact receipt recovery remains possible after subsequent equipment or library changes.
+-/// It does not consume another Blob and cannot rewrite a head or repeat a payment.
+-public fun assert_receipt(l:&Library,owner:address,generation:u64,request:vector<u8>,object_id:ID,sha256:vector<u8>,expected_capture:Option<Capture>):u64 {
+-    let r=receipt(l,owner,generation,request).destroy_some();
+-    assert!(storage::object_id(&r.reference)==object_id && storage::hash(&r.reference)==sha256,ERequest);
+-    assert!(r.capture==expected_capture,ECapture);r.revision
+-}
+-fun internal_commit(l:&mut Library,owner:address,generation:u64,expected:u64,request:vector<u8>,blob:Blob,system:&System,sha256:vector<u8>,capture:Option<Capture>):u64 {
+-    assert_hash(&request);assert_hash(&sha256);let scope=Scope{owner,generation};let key=Request{scope,id:request};
+-    // Permanent scoped receipts prevent reuse even after the client's 32-receipt window.
+-    assert!(!l.receipts.contains(key),ERequest);
+-    assert!(current_revision(l,owner,generation)==expected,ERevision);
+-    let reference=storage::certified(&blob,system,sha256);
+-    assert!(storage::bytes(&reference)<=16777216,EReference);
+-    let index=l.count;let revision=expected+1;let r=Receipt{index,revision,reference,capture};
+-    dof::add(&mut l.id,BlobKey{index},blob);l.count=index+1;l.receipts.add(key,r);
+-    let h=Head{revision,request,receipt:r};
+-    if(l.heads.contains(scope))*l.heads.borrow_mut(scope)=h else l.heads.add(scope,h);
+-    revision
+-}
+-public fun assert_capture(c:&Capture,composition:ID,revision:u64,commitment:vector<u8>) {
+-    assert!(c.composition==composition && c.revision==revision && c.commitment==commitment,ECapture)
+-}
+-fun internal_extend(l:&mut Library,receipt_owner:address,receipt_generation:u64,request:vector<u8>,extension:Storage,system:&System) {
+-    let r=receipt(l,receipt_owner,receipt_generation,request).destroy_some();
+-    let b:&mut Blob=dof::borrow_mut(&mut l.id,BlobKey{index:r.index});
+-    system::extend_blob_with_resource(system,b,extension);
+-    storage::assert_current(&r.reference,b,system)
+-}
+-/// Active heads may not be purged. Historical metadata/receipts remain for recovery.
+-fun internal_purge(l:&mut Library,owner:address,generation:u64,receipt_owner:address,receipt_generation:u64,request:vector<u8>) {
+-    let r=receipt(l,receipt_owner,receipt_generation,request).destroy_some();
+-    let h=head(l,owner,generation);
+-    assert!(h.is_none() || h.borrow().receipt.index!=r.index,EHead);
+-    let b:Blob=dof::remove(&mut l.id,BlobKey{index:r.index});blob::burn(b)
+-}
+-public fun available(l:&Library,r:&Receipt):bool{dof::exists_with_type<BlobKey,Blob>(&l.id,BlobKey{index:r.index})}
+-public fun assert_available(l:&Library,r:&Receipt,system:&System) {
+-    storage::assert_current(&r.reference,dof::borrow(&l.id,BlobKey{index:r.index}),system)
+-}
+-
+-/// Cross-package methods require this instance's private application operator.
+-public fun approve<W:drop>(w:W,id:vector<u8>,l:&Library,owner:address,generation:u64) {
+-    soulidity_content::authority::assert_operator(w,&l.controller);
+-    internal_approve(id,l,owner,generation)
+-}
+-
+-public fun commit<W:drop>(w:W,l:&mut Library,owner:address,generation:u64,expected:u64,request:vector<u8>,blob:Blob,system:&System,sha256:vector<u8>,capture:Option<Capture>):u64 {
+-    soulidity_content::authority::assert_operator(w,&l.controller);
+-    internal_commit(l,owner,generation,expected,request,blob,system,sha256,capture)
+-}
+-
+-public fun extend<W:drop>(w:W,l:&mut Library,receipt_owner:address,receipt_generation:u64,request:vector<u8>,extension:Storage,system:&System) {
+-    soulidity_content::authority::assert_operator(w,&l.controller);
+-    internal_extend(l,receipt_owner,receipt_generation,request,extension,system)
+-}
+-
+-public fun purge<W:drop>(w:W,l:&mut Library,owner:address,generation:u64,receipt_owner:address,receipt_generation:u64,request:vector<u8>) {
+-    soulidity_content::authority::assert_operator(w,&l.controller);
+-    internal_purge(l,owner,generation,receipt_owner,receipt_generation,request)
+-}
+--- original/sources/state_configuration.move
++++ candidate/sources/state_configuration.move
+@@ -1,72 +0,0 @@
+-/// Public character configuration bytes, separate from encrypted content and grants.
+-/// The private application operator controls writes; its entry proves custody/gates.
+-module soulidity_content::state_configuration;
+-
+-use std::bcs;
+-use std::hash;
+-use std::string::{Self, String};
+-use sui::table::{Self, Table};
+-use soulidity_content::authority::{Self, Controller};
+-use soulidity_standard::soul::Soul;
+-
+-const EKey: u64 = 1;
+-const EMissing: u64 = 2;
+-const ERevision: u64 = 3;
+-const EReserved: u64 = 4;
+-
+-public struct Entry has copy, drop, store { key: String, value_hash: vector<u8> }
+-public struct Configuration has key, store {
+-    id: UID, controller: Controller, root: ID, revision: u64,
+-    values: Table<String, vector<u8>>, entries: vector<Entry>,
+-}
+-public struct Commitment has drop { domain: vector<u8>, configuration: vector<u8> }
+-
+-public fun new<W: drop, P: key>(w: W, parent: &P, root: &Soul, ctx: &mut TxContext): Configuration {
+-    Configuration { id: object::new(ctx), controller: authority::bind(w, parent, root),
+-        root: object::id(root), revision: 0, values: table::new(ctx), entries: vector[] }
+-}
+-public fun root(c: &Configuration): ID { c.root }
+-public fun revision(c: &Configuration): u64 { c.revision }
+-public fun count(c: &Configuration): u64 { c.entries.length() }
+-public fun key_at(c: &Configuration, i: u64): String { c.entries[i].key }
+-public fun contains(c: &Configuration, key: String): bool { c.values.contains(key) }
+-public fun value(c: &Configuration, key: String): &vector<u8> {
+-    assert!(c.values.contains(key), EMissing); c.values.borrow(key)
+-}
+-/// Includes the exact per-key value digests, not just the Table UID.
+-public fun commitment(c: &Configuration): vector<u8> {
+-    hash::sha2_256(bcs::to_bytes(&Commitment {
+-        domain: b"soulidity/state-configuration/v1", configuration: bcs::to_bytes(c),
+-    }))
+-}
+-public fun assert_binding(c: &Configuration, parent: ID, root: ID) {
+-    assert!(authority::parent(&c.controller) == parent && c.root == root && authority::root(&c.controller) == root, EKey)
+-}
+-fun index(c: &Configuration, key: &String): u64 {
+-    let mut i = 0; while (i < c.entries.length()) {
+-        if (c.entries[i].key == *key) return i; i = i + 1
+-    }; abort EMissing
+-}
+-public fun set<W: drop>(w: W, c: &mut Configuration, key: String, value: vector<u8>, expected: u64) {
+-    authority::assert_operator(w, &c.controller); assert!(c.revision == expected, ERevision);
+-    assert!(!string::is_empty(&key), EKey); let value_hash = hash::sha2_256(value);
+-    if (c.values.contains(key)) {
+-        let i = index(c, &key); *c.values.borrow_mut(key) = value; c.entries[i].value_hash = value_hash
+-    } else {
+-        c.entries.push_back(Entry { key, value_hash }); c.values.add(key, value)
+-    }; c.revision = c.revision + 1
+-}
+-public fun delete<W: drop>(w: W, c: &mut Configuration, key: String, expected: u64) {
+-    authority::assert_operator(w, &c.controller); assert!(c.revision == expected, ERevision);
+-    assert!(!string::is_empty(&key), EKey); let i = index(c, &key);
+-    let _ = c.values.remove(key); c.entries.remove(i); c.revision = c.revision + 1
+-}
+-/// Original mint-time rule only. These bytes must not masquerade as an envelope.
+-/// Later ordinary metadata writes do not grant or modify encrypted-content access.
+-public fun assert_initial_key(key: &String) {
+-    assert!(!string::is_empty(key), EKey); let prefix = b"content_seal_envelope_v1:";
+-    let bytes = key.as_bytes(); if (bytes.length() < prefix.length()) return;
+-    let mut i = 0; while (i < prefix.length()) {
+-        if (bytes[i] != prefix[i]) return; i = i + 1
+-    }; abort EReserved
+-}

@@ -1,0 +1,10 @@
+[package]
+name = "WAL"
+license = "Apache-2.0"
+authors = ["Mysten Labs <build@mystenlabs.com>"]
+edition = "2024.beta"
+
+[dependencies]
+Sui = { local = "../sui-framework", override = true }
+[addresses]
+wal = "0x0"

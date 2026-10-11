@@ -1,0 +1,28 @@
+[NOTE] Dependencies on Sui, MoveStdlib, Bridge, DeepBook, and SuiSystem are automatically added, but this feature is disabled for your package because you have explicitly included dependencies on Sui. Consider removing these dependencies from `Move.toml`.
+warning[WC04039]: unable to determine literal's type
+   ┌─ ./tests/storage_epoch_tests.move:30:15
+   │
+30 │     let mut n=0;while(n < 4){storage_fixture::next_epoch(&mut sc,&mut system,&mut nodes,&mut clock);n=n+1};
+   │               ^ Could not determine a concrete type for this numeric literal, so defaulting to 'u64'
+   │
+   = To avoid this warning, add an explicit type annotation, e.g., '<num>u64'
+   = This warning can be suppressed with '#[allow(untyped_literal)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[WC04039]: unable to determine literal's type
+   ┌─ ./tests/storage_epoch_tests.move:56:15
+   │
+56 │     let mut i=0;while(i < 3){storage_fixture::next_epoch(&mut sc,&mut system,&mut nodes,&mut clock);i=i+1};
+   │               ^ Could not determine a concrete type for this numeric literal, so defaulting to 'u64'
+   │
+   = To avoid this warning, add an explicit type annotation, e.g., '<num>u64'
+   = This warning can be suppressed with '#[allow(untyped_literal)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+
+warning[WC04039]: unable to determine literal's type
+   ┌─ ./tests/storage_epoch_tests.move:67:15
+   │
+67 │     let mut i=0;while(i < 3){storage_fixture::next_epoch(&mut sc,&mut system,&mut nodes,&mut clock);i=i+1};
+   │               ^ Could not determine a concrete type for this numeric literal, so defaulting to 'u64'
+   │
+   = To avoid this warning, add an explicit type annotation, e.g., '<num>u64'
+   = This warning can be suppressed with '#[allow(untyped_literal)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+

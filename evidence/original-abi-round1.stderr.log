@@ -1,0 +1,3 @@
+thread main panicked at external-crates/move/crates/move-model-2/src/model.rs:793:25:
+Module ModuleId { address: 0000000000000000000000000000000000000000000000000000000000000000, name: "soul" } depends on missing package 0000000000000000000000000000000000000000000000000000000000000001
+This diagnostic was transcribed from captured tool output; command result exit_code=134. Tool-output frame remains the original raw output.

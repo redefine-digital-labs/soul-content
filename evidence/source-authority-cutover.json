@@ -1,0 +1,71 @@
+{
+  "package": "soulidity_content",
+  "repository": "soul-content",
+  "state": "active-source-files",
+  "modules": [
+    {
+      "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/authority.move",
+      "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/authority.move",
+      "sha256": "72b14a54093a542ffc065553920481cdffc3383eb6cb2f7d05f36c2355e97bfe",
+      "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/authority.move"
+    },
+    {
+      "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/authorization.move",
+      "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/authorization.move",
+      "sha256": "e1e337cd3e940f26f5eabad5c0fd486b192a0b6cf8327688c62e91ff310cb0dd",
+      "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/authorization.move"
+    },
+    {
+      "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/blob_custody.move",
+      "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/blob_custody.move",
+      "sha256": "81ab5b2b929a7b67c74ab6c6bafea67891d56ce751ada2da99ebf0690eca2737",
+      "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/blob_custody.move"
+    },
+    {
+      "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/document.move",
+      "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/document.move",
+      "sha256": "449575a36d14411276ad5c814ccdaeb4eff07d662d4b8bffeb72068e7bdb39e0",
+      "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/document.move"
+    },
+    {
+      "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/kind_registry.move",
+      "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/kind_registry.move",
+      "sha256": "9fa9db9d6d391bc27257ff7cb22552744b01e12ac7cf902a19adbbd0a08cad57",
+      "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/kind_registry.move"
+    },
+    {
+      "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/paid_access.move",
+      "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/paid_access.move",
+      "sha256": "3b39ce29771d0a22f668958b2198aafaa82deb75d5121d83a76882be47408c09",
+      "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/paid_access.move"
+    },
+    {
+      "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/paged_store.move",
+      "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/paged_store.move",
+      "sha256": "33d15484e8d5868d0202654373577a024077b8d43ae680ee68e974fbfe7fda0a",
+      "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/paged_store.move"
+    },
+    {
+      "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/permissions.move",
+      "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/permissions.move",
+      "sha256": "5b0bf758bfed7bd53ad1af4618beb4552a0125e1fcccc8c49e830f370f786dff",
+      "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/permissions.move"
+    },
+    {
+      "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/storage.move",
+      "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/storage.move",
+      "sha256": "dba26fb0baac1a181363a43fb05353e77f078f527984442f79ca4647f25851ee",
+      "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/storage.move"
+    }
+  ],
+  "retained_assembly_modules": [
+    "founding_library",
+    "loadout",
+    "state_configuration"
+  ],
+  "old_package_assembly": "12 original modules retained, 9 resolve to sole Content repository source; 3 retain their assigned Native/Extensions ownership",
+  "independent_package_modules": 9,
+  "independent_published_type_linkage_verified": false,
+  "consumer_or_chain_type_cutover": false,
+  "rollback": "After confirming canonical source unchanged, replace each original symlink with matching frozen-before file; restore workspace snapshot, regenerate source-authority map. Preserve candidate evidence."
+}

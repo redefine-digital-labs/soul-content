@@ -1,0 +1,11 @@
+--- original/phase_handoff.py
++++ isolated/phase_handoff.py
+@@ -109,7 +109,7 @@
+     branch = run_git(root, "symbolic-ref", "--quiet", "--short", "HEAD", check=False)
+     if not branch:
+         branch = "(detached HEAD)"
+-    commit = run_git(root, "rev-parse", "HEAD")
++    commit = run_git(root, "rev-parse", "HEAD", check=False) or "(unborn; no commits)"
+     status_lines = run_git(root, "status", "--short", "--untracked-files=normal").splitlines()
+     if status_lines:
+         status_label = f"dirty ({len(status_lines)} status entries)"

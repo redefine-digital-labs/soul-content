@@ -1,0 +1,437 @@
+{
+  "id": {
+    "address": "soulidity_foundation",
+    "name": "source_authority"
+  },
+  "doc": " Typed source revision metadata. A detached value grants no authority:\n the Config must keep its typed slot private and authorize every transition.",
+  "immediate_dependencies": [
+    {
+      "address": "std",
+      "name": "ascii"
+    },
+    {
+      "address": "std",
+      "name": "option"
+    },
+    {
+      "address": "std",
+      "name": "type_name"
+    },
+    {
+      "address": "sui",
+      "name": "object"
+    },
+    {
+      "address": "sui",
+      "name": "package"
+    }
+  ],
+  "attributes": [],
+  "functions": {
+    "names": {
+      "source_index": 0,
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        },
+        {
+          "name": "R",
+          "constraints": []
+        },
+        {
+          "name": "T",
+          "constraints": []
+        }
+      ],
+      "parameters": [],
+      "return_": []
+    },
+    "advance": {
+      "source_index": 1,
+      "index": 1,
+      "doc": " Both witnesses are real private values, not text or copyable metadata.\n The package proof pins the actual latest callable and stable producer lineage.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": [
+            "Drop"
+          ]
+        },
+        {
+          "name": "R",
+          "constraints": [
+            "Drop"
+          ]
+        },
+        {
+          "name": "T",
+          "constraints": [
+            "Key"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "previous",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "std",
+                "name": "option"
+              },
+              "name": "Option",
+              "type_arguments": [
+                {
+                  "phantom": false,
+                  "argument": {
+                    "Datatype": {
+                      "module": {
+                        "address": "soulidity_foundation",
+                        "name": "source_authority"
+                      },
+                      "name": "Revision",
+                      "type_arguments": []
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "_w",
+          "type_": {
+            "NamedTypeParameter": "W"
+          }
+        },
+        {
+          "name": "_r",
+          "type_": {
+            "NamedTypeParameter": "R"
+          }
+        },
+        {
+          "name": "p",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "package"
+                  },
+                  "name": "Publisher",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "cap",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "package"
+                  },
+                  "name": "UpgradeCap",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_foundation",
+              "name": "source_authority"
+            },
+            "name": "Revision",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "assert_types": {
+      "source_index": 2,
+      "index": 2,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": []
+        },
+        {
+          "name": "R",
+          "constraints": []
+        },
+        {
+          "name": "T",
+          "constraints": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "source_authority"
+                  },
+                  "name": "Revision",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "original": {
+      "source_index": 3,
+      "index": 3,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "source_authority"
+                  },
+                  "name": "Revision",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "callable": {
+      "source_index": 4,
+      "index": 4,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "source_authority"
+                  },
+                  "name": "Revision",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "marker": {
+      "source_index": 5,
+      "index": 5,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "source_authority"
+                  },
+                  "name": "Revision",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "std",
+              "name": "type_name"
+            },
+            "name": "TypeName",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "version": {
+      "source_index": 6,
+      "index": 6,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "r",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_foundation",
+                    "name": "source_authority"
+                  },
+                  "name": "Revision",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        "u64"
+      ]
+    }
+  },
+  "structs": {
+    "Revision": {
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Copy",
+        "Drop",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "original": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "callable": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "marker": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "type_name"
+                },
+                "name": "TypeName",
+                "type_arguments": []
+              }
+            }
+          },
+          "version": {
+            "index": 3,
+            "doc": null,
+            "type_": "u64"
+          }
+        }
+      }
+    }
+  },
+  "enums": {}
+}

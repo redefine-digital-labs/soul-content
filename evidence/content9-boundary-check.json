@@ -1,0 +1,19 @@
+{
+  "exactly_nine_root_modules": true,
+  "no_excluded_definitions": true,
+  "all_nine_source_bytes_unchanged": true,
+  "included_source_has_no_excluded_module_dependency": true,
+  "production_build_exit_code": 0,
+  "original_production_build_exit_code": 0,
+  "unit_exit_code": 0,
+  "unit_total": 19,
+  "unit_passed": 19,
+  "unit_failed": 0,
+  "unit_default_budget": true,
+  "no_production_source_adaptation": true,
+  "no_guard_or_ability_change": true,
+  "no_UID_Cap_export_added": true,
+  "no_consumers_cutover": true,
+  "no_RPC_signing_publish_or_commit": true,
+  "fresh_package_not_legacy_type_compatible": true
+}

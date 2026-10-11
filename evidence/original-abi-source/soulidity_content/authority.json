@@ -1,0 +1,324 @@
+{
+  "id": {
+    "address": "soulidity_content",
+    "name": "authority"
+  },
+  "doc": " Typed application authority for content libraries. This is not an owner\n attestation: the application must prove current custody at its user entry.",
+  "immediate_dependencies": [
+    {
+      "address": "soulidity_standard",
+      "name": "soul"
+    },
+    {
+      "address": "std",
+      "name": "ascii"
+    },
+    {
+      "address": "std",
+      "name": "type_name"
+    },
+    {
+      "address": "sui",
+      "name": "object"
+    }
+  ],
+  "attributes": [],
+  "functions": {
+    "bind": {
+      "source_index": 0,
+      "index": 0,
+      "doc": " A dedicated private marker is required; copyable public metadata from the\n same application module is deliberately insufficient.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": [
+            "Drop"
+          ]
+        },
+        {
+          "name": "P",
+          "constraints": [
+            "Key"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "_w",
+          "type_": {
+            "NamedTypeParameter": "W"
+          }
+        },
+        {
+          "name": "parent",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "NamedTypeParameter": "P"
+              }
+            ]
+          }
+        },
+        {
+          "name": "root",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_standard",
+                    "name": "soul"
+                  },
+                  "name": "Soul",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "soulidity_content",
+              "name": "authority"
+            },
+            "name": "Controller",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "assert_operator": {
+      "source_index": 1,
+      "index": 1,
+      "doc": " Only the same original application module can manufacture the bound marker.\n Do not expose its constructor through the application public API.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [
+        {
+          "name": "W",
+          "constraints": [
+            "Drop"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "_w",
+          "type_": {
+            "NamedTypeParameter": "W"
+          }
+        },
+        {
+          "name": "c",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "authority"
+                  },
+                  "name": "Controller",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "parent": {
+      "source_index": 2,
+      "index": 2,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "c",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "authority"
+                  },
+                  "name": "Controller",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "root": {
+      "source_index": 3,
+      "index": 3,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "c",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "authority"
+                  },
+                  "name": "Controller",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "sui",
+              "name": "object"
+            },
+            "name": "ID",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "operator": {
+      "source_index": 4,
+      "index": 4,
+      "doc": null,
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "c",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "soulidity_content",
+                    "name": "authority"
+                  },
+                  "name": "Controller",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "std",
+              "name": "type_name"
+            },
+            "name": "TypeName",
+            "type_arguments": []
+          }
+        }
+      ]
+    }
+  },
+  "structs": {
+    "Controller": {
+      "index": 0,
+      "doc": null,
+      "attributes": [],
+      "abilities": [
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "operator": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "std",
+                  "name": "type_name"
+                },
+                "name": "TypeName",
+                "type_arguments": []
+              }
+            }
+          },
+          "parent": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          },
+          "root": {
+            "index": 2,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "ID",
+                "type_arguments": []
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "enums": {}
+}
