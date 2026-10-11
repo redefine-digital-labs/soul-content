@@ -1,0 +1,61 @@
+--- content/original-Move.toml
++++ content/offline-Move.toml
+@@ -3,10 +3,9 @@
+ edition = "2024"
+ 
+ [dependencies]
+-SoulidityStandard = { local = "../../packages/soulidity_standard" }
+-SoulidityFoundation = { local = "../../packages/soulidity_foundation" }
+-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "2a0becb2fcc6989e492981104af67f62f2c9511a", override = true }
+-Walrus = { git = "https://github.com/MystenLabs/walrus.git", subdir = "mainnet-contracts/walrus", rev = "a19764ff77f501a79db88dc6d922a2c73848e989" }
+-
++SoulidityStandard = { local = "../soulidity_standard" }
++SoulidityFoundation = { local = "../soulidity_foundation" }
++Sui = { local = "../sui-framework", override = true }
++Walrus = { local = "../walrus" }
+ [addresses]
+ soulidity_content = "0x0"
+--- soulidity_standard/original-Move.toml
++++ soulidity_standard/offline-Move.toml
+@@ -3,7 +3,6 @@
+ edition = "2024"
+ 
+ [dependencies]
+-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "2a0becb2fcc6989e492981104af67f62f2c9511a", override = true }
+-
++Sui = { local = "../sui-framework", override = true }
+ [addresses]
+ soulidity_standard = "0x0"
+--- soulidity_foundation/original-Move.toml
++++ soulidity_foundation/offline-Move.toml
+@@ -3,7 +3,6 @@
+ edition = "2024"
+ 
+ [dependencies]
+-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "2a0becb2fcc6989e492981104af67f62f2c9511a", override = true }
+-
++Sui = { local = "../sui-framework", override = true }
+ [addresses]
+ soulidity_foundation = "0x0"
+--- walrus/original-Move.toml
++++ walrus/offline-Move.toml
+@@ -5,7 +5,7 @@
+ edition = "2024.beta"
+ 
+ [dependencies]
+-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "testnet-v1.51.1" }
++Sui = { local = "../sui-framework", override = true }
+ WAL = { local = "../wal" }
+ 
+ [addresses]
+--- wal/original-Move.toml
++++ wal/offline-Move.toml
+@@ -5,7 +5,6 @@
+ edition = "2024.beta"
+ 
+ [dependencies]
+-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "testnet-v1.51.1" }
+-
++Sui = { local = "../sui-framework", override = true }
+ [addresses]
+ wal = "0x0"

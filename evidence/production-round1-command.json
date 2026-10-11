@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui",
+    "move",
+    "build",
+    "--path",
+    "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/packages/soulidity_content",
+    "--dump-bytecode-as-base64",
+    "--with-unpublished-dependencies",
+    "--no-tree-shaking",
+    "--disassemble"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 15.36454701423645,
+  "rpc": false,
+  "default_budget_unchanged": true
+}

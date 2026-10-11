@@ -1,0 +1,487 @@
+{
+  "comparison_kind": "fixed CLI source-model production summary; actual compiled bytecode independently compared",
+  "common_nine_abi_equal": true,
+  "public_production_functions": 149,
+  "struct_count": 32,
+  "modules": [
+    {
+      "module": "authority",
+      "source_model_summary_equal": true,
+      "public_production_functions": 5,
+      "structs": 1,
+      "functions": [
+        "bind",
+        "assert_operator",
+        "parent",
+        "root",
+        "operator"
+      ],
+      "immediate_dependencies": [
+        {
+          "address": "soulidity_standard",
+          "name": "soul"
+        },
+        {
+          "address": "std",
+          "name": "ascii"
+        },
+        {
+          "address": "std",
+          "name": "type_name"
+        },
+        {
+          "address": "sui",
+          "name": "object"
+        }
+      ]
+    },
+    {
+      "module": "authorization",
+      "source_model_summary_equal": true,
+      "public_production_functions": 30,
+      "structs": 6,
+      "functions": [
+        "new",
+        "generation",
+        "capacity",
+        "count",
+        "max_capacity",
+        "protocol_version",
+        "grant",
+        "grant_hash",
+        "hash",
+        "root",
+        "version",
+        "module_root",
+        "sequence",
+        "issuer",
+        "grantee",
+        "scope",
+        "has_scope",
+        "expiry",
+        "grant_generation",
+        "cleanup_target",
+        "live",
+        "assert_snapshot",
+        "assert_preserves_active_scopes",
+        "issue",
+        "revoke",
+        "revoke_scope",
+        "set_capacity",
+        "cleanup",
+        "clear",
+        "permits"
+      ],
+      "immediate_dependencies": [
+        {
+          "address": "soulidity_content",
+          "name": "authority"
+        },
+        {
+          "address": "soulidity_content",
+          "name": "permissions"
+        },
+        {
+          "address": "soulidity_standard",
+          "name": "soul"
+        },
+        {
+          "address": "std",
+          "name": "bcs"
+        },
+        {
+          "address": "std",
+          "name": "hash"
+        },
+        {
+          "address": "std",
+          "name": "option"
+        },
+        {
+          "address": "std",
+          "name": "vector"
+        },
+        {
+          "address": "sui",
+          "name": "clock"
+        },
+        {
+          "address": "sui",
+          "name": "event"
+        },
+        {
+          "address": "sui",
+          "name": "object"
+        },
+        {
+          "address": "sui",
+          "name": "table"
+        },
+        {
+          "address": "sui",
+          "name": "tx_context"
+        }
+      ]
+    },
+    {
+      "module": "blob_custody",
+      "source_model_summary_equal": true,
+      "public_production_functions": 6,
+      "structs": 2,
+      "functions": [
+        "add_document",
+        "append",
+        "take",
+        "take_document",
+        "borrow_mut",
+        "assert_current"
+      ],
+      "immediate_dependencies": [
+        {
+          "address": "soulidity_content",
+          "name": "storage"
+        },
+        {
+          "address": "std",
+          "name": "vector"
+        },
+        {
+          "address": "sui",
+          "name": "dynamic_object_field"
+        },
+        {
+          "address": "sui",
+          "name": "object"
+        },
+        {
+          "address": "sui",
+          "name": "tx_context"
+        },
+        {
+          "address": "walrus",
+          "name": "blob"
+        },
+        {
+          "address": "walrus",
+          "name": "system"
+        }
+      ]
+    },
+    {
+      "module": "document",
+      "source_model_summary_equal": true,
+      "public_production_functions": 27,
+      "structs": 2,
+      "functions": [
+        "soul_doc_name",
+        "memory_name",
+        "assert_name",
+        "namespace",
+        "new",
+        "new_initial_invariant",
+        "kind",
+        "name",
+        "version",
+        "reference",
+        "scope",
+        "created_at_ms",
+        "op_mask",
+        "nonce",
+        "read_mask",
+        "download_policy",
+        "envelope",
+        "deleted",
+        "purged",
+        "seal_id",
+        "bind_initial_namespace",
+        "assert_read_policy",
+        "assert_live",
+        "assert_read",
+        "assert_operation",
+        "mark_deleted",
+        "mark_purged"
+      ],
+      "immediate_dependencies": [
+        {
+          "address": "soulidity_content",
+          "name": "kind_registry"
+        },
+        {
+          "address": "soulidity_content",
+          "name": "storage"
+        },
+        {
+          "address": "std",
+          "name": "bcs"
+        },
+        {
+          "address": "std",
+          "name": "option"
+        },
+        {
+          "address": "std",
+          "name": "string"
+        },
+        {
+          "address": "std",
+          "name": "vector"
+        },
+        {
+          "address": "sui",
+          "name": "object"
+        }
+      ]
+    },
+    {
+      "module": "kind_registry",
+      "source_model_summary_equal": true,
+      "public_production_functions": 35,
+      "structs": 7,
+      "functions": [
+        "kind_soul_doc",
+        "kind_memory",
+        "kind_skill",
+        "kind_sprite",
+        "kind_audio",
+        "first_custom_kind",
+        "op_append",
+        "op_delete",
+        "op_purge",
+        "op_active_bind",
+        "read_owner",
+        "read_grant",
+        "read_paid",
+        "read_public",
+        "descriptor_kind",
+        "protocol_version",
+        "descriptor_version",
+        "descriptor_name",
+        "descriptor_op_mask",
+        "descriptor_read_mode_mask",
+        "descriptor_has_active_binding",
+        "descriptor_requires_download_policy",
+        "descriptor_default_grant_scope_mask",
+        "descriptor_deprecated",
+        "registry_id",
+        "registry_version",
+        "next_kind",
+        "contains_kind",
+        "contains_name",
+        "borrow_descriptor",
+        "kind_for_name",
+        "register_kind",
+        "deprecate_kind",
+        "reactivate_kind",
+        "assert_kind_active"
+      ],
+      "immediate_dependencies": [
+        {
+          "address": "soulidity_content",
+          "name": "permissions"
+        },
+        {
+          "address": "std",
+          "name": "string"
+        },
+        {
+          "address": "sui",
+          "name": "event"
+        },
+        {
+          "address": "sui",
+          "name": "object"
+        },
+        {
+          "address": "sui",
+          "name": "table"
+        },
+        {
+          "address": "sui",
+          "name": "transfer"
+        },
+        {
+          "address": "sui",
+          "name": "tx_context"
+        }
+      ]
+    },
+    {
+      "module": "paged_store",
+      "source_model_summary_equal": true,
+      "public_production_functions": 9,
+      "structs": 2,
+      "functions": [
+        "new",
+        "length",
+        "pages",
+        "get",
+        "values",
+        "range",
+        "append",
+        "from_values",
+        "destroy"
+      ],
+      "immediate_dependencies": [
+        {
+          "address": "std",
+          "name": "bcs"
+        },
+        {
+          "address": "std",
+          "name": "vector"
+        },
+        {
+          "address": "sui",
+          "name": "table"
+        },
+        {
+          "address": "sui",
+          "name": "tx_context"
+        }
+      ]
+    },
+    {
+      "module": "paid_access",
+      "source_model_summary_equal": true,
+      "public_production_functions": 23,
+      "structs": 11,
+      "functions": [
+        "new",
+        "revision",
+        "offer",
+        "entry",
+        "entry_hash",
+        "expires",
+        "receipt",
+        "total",
+        "receipt_price",
+        "receipt_total",
+        "receipt_fee",
+        "receipt_fee_revision",
+        "receipt_beneficiary",
+        "receipt_platform_recipient",
+        "quote",
+        "register",
+        "configure",
+        "remove_offer",
+        "buy",
+        "add",
+        "revoke",
+        "cleanup",
+        "assert_access"
+      ],
+      "immediate_dependencies": [
+        {
+          "address": "soulidity_content",
+          "name": "authority"
+        },
+        {
+          "address": "soulidity_content",
+          "name": "kind_registry"
+        },
+        {
+          "address": "soulidity_foundation",
+          "name": "economics"
+        },
+        {
+          "address": "soulidity_standard",
+          "name": "soul"
+        },
+        {
+          "address": "std",
+          "name": "bcs"
+        },
+        {
+          "address": "std",
+          "name": "hash"
+        },
+        {
+          "address": "std",
+          "name": "option"
+        },
+        {
+          "address": "std",
+          "name": "u64"
+        },
+        {
+          "address": "sui",
+          "name": "clock"
+        },
+        {
+          "address": "sui",
+          "name": "coin"
+        },
+        {
+          "address": "sui",
+          "name": "event"
+        },
+        {
+          "address": "sui",
+          "name": "object"
+        },
+        {
+          "address": "sui",
+          "name": "package"
+        },
+        {
+          "address": "sui",
+          "name": "table"
+        },
+        {
+          "address": "sui",
+          "name": "tx_context"
+        }
+      ]
+    },
+    {
+      "module": "permissions",
+      "source_model_summary_equal": true,
+      "public_production_functions": 4,
+      "structs": 0,
+      "functions": [
+        "scope_seal",
+        "scope_memory",
+        "scope_skills",
+        "scope_assets"
+      ],
+      "immediate_dependencies": []
+    },
+    {
+      "module": "storage",
+      "source_model_summary_equal": true,
+      "public_production_functions": 10,
+      "structs": 1,
+      "functions": [
+        "certified",
+        "certified_batch",
+        "assert_current",
+        "assert_current_batch",
+        "hash",
+        "bytes",
+        "blob_id",
+        "object_id",
+        "certified_epoch",
+        "original_end_epoch"
+      ],
+      "immediate_dependencies": [
+        {
+          "address": "std",
+          "name": "option"
+        },
+        {
+          "address": "sui",
+          "name": "object"
+        },
+        {
+          "address": "walrus",
+          "name": "blob"
+        },
+        {
+          "address": "walrus",
+          "name": "system"
+        }
+      ]
+    }
+  ],
+  "full_package_abi_not_equal": "The original 12-module package has three excluded modules; existing consumers of those interfaces cannot switch unchanged. No old published ABI/type compatibility is claimed."
+}

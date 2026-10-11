@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "scope": "staged actual independent Content9 inputs",
+  "config_sha256": "8ee2012260bd454f19fdf55b534b64320dc83806dd4fa7c6aed505460d965b12",
+  "input_files": 29,
+  "selected_cache_files": 435,
+  "source_path_executed": false,
+  "nine_module_bytes_equal_integrated_current": true,
+  "original_content_tests": [
+    19,
+    19,
+    0
+  ],
+  "inputs_and_controls_unchanged": true,
+  "cache_unchanged": true,
+  "results": [
+    {
+      "operation": "build",
+      "command": [
+        "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui",
+        "move",
+        "build",
+        "--path",
+        "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_content",
+        "--install-dir",
+        "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/scratch",
+        "--dump-bytecode-as-base64",
+        "--with-unpublished-dependencies",
+        "--no-tree-shaking"
+      ],
+      "exit": 0,
+      "stdout_sha256": "995cb69b10d84c4ca27839a5157b3e18906552937a1fbe2d8ba91283ce686d3e",
+      "stderr_sha256": "6def21a192b02a8070da3595ccff32bf20aa4a15d2b90d29e13be2085e90b4a2",
+      "gas_limit_override": null,
+      "nine_module_bytes_equal_integrated_current": true
+    },
+    {
+      "operation": "test",
+      "command": [
+        "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui",
+        "move",
+        "test",
+        "--path",
+        "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_content",
+        "--install-dir",
+        "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/scratch"
+      ],
+      "exit": 0,
+      "stdout_sha256": "ab12e263f36c6a90e9237cd5fb71fbb668f85d1fd33eff2c83cdb4c30559fbca",
+      "stderr_sha256": "2f50102100fa2845e12746cca8b7385e1231fcb2b9113d77c302a7d9d818a735",
+      "gas_limit_override": null,
+      "counts": [
+        19,
+        19,
+        0
+      ]
+    }
+  ],
+  "rpc_calls": 0,
+  "signatures": 0,
+  "published_compatibility_proven": false
+}

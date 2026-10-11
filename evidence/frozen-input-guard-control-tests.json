@@ -1,0 +1,365 @@
+{
+  "candidate_tool": "/private/var/folders/p7/xnbbfd1d3l12fp_fmj7bz85w0000gn/T/content-frozen-input-guard-vi55kkld/tools/verify_candidate.py",
+  "candidate_tool_sha256": "d435046d937919872dbe1d3b380cba3a2779877feda2252f87eafd32d0f892f4",
+  "actual_root": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content",
+  "scope": "extracted frozen external locator and offline vendor input preflight only",
+  "tests": [
+    {
+      "case": "actual_frozen_inputs_read_only",
+      "expected_exit": "0",
+      "actual_exit_code": 0,
+      "passed": true,
+      "stdout": "Frozen input preflight PASS; no Sui business command executed",
+      "stderr": ""
+    },
+    {
+      "case": "correct_frozen_git_and_vendor_copy",
+      "expected_exit": "0",
+      "actual_exit_code": 0,
+      "passed": true,
+      "stdout": "Frozen input preflight PASS; no Sui business command executed",
+      "stderr": ""
+    },
+    {
+      "case": "sui_wrong_git",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Selected external dependency git differs from frozen graph: Sui"
+    },
+    {
+      "case": "sui_wrong_subdir",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Selected external dependency subdir differs from frozen graph: Sui"
+    },
+    {
+      "case": "sui_wrong_rev",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Selected external dependency rev differs from frozen graph: Sui"
+    },
+    {
+      "case": "walrus_wrong_git",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Selected external dependency git differs from frozen graph: Walrus"
+    },
+    {
+      "case": "walrus_wrong_subdir",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Selected external dependency subdir differs from frozen graph: Walrus"
+    },
+    {
+      "case": "walrus_wrong_rev",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Selected external dependency rev differs from frozen graph: Walrus"
+    },
+    {
+      "case": "correct_local_external_dependencies_and_own_alias",
+      "expected_exit": "0",
+      "actual_exit_code": 0,
+      "passed": true,
+      "stdout": "Frozen input preflight PASS; no Sui business command executed",
+      "stderr": ""
+    },
+    {
+      "case": "wrong_local_external_source",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Selected local external dependency differs from frozen source: Sui"
+    },
+    {
+      "case": "ambiguous_git_and_local",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Ambiguous selected external dependency: Sui"
+    },
+    {
+      "case": "duplicate_git_revision_field",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid or duplicate dependency field: Sui"
+    },
+    {
+      "case": "missing_git_subdir_field",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Selected external dependency subdir differs from frozen graph: Sui"
+    },
+    {
+      "case": "extra_vendor_source",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input set differs from snapshot; missing=[]; extra=['sui-framework/sources/unlisted.move']"
+    },
+    {
+      "case": "extra_vendor_test",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input set differs from snapshot; missing=[]; extra=['walrus/tests/unlisted.move']"
+    },
+    {
+      "case": "extra_vendor_manifest",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input set differs from snapshot; missing=[]; extra=['wal/Unlisted.toml']"
+    },
+    {
+      "case": "extra_vendor_other_file",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input set differs from snapshot; missing=[]; extra=['move-stdlib/unlisted.txt']"
+    },
+    {
+      "case": "extra_vendor_unknown_package",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input set differs from snapshot; missing=[]; extra=['unknown/sources/input.move']"
+    },
+    {
+      "case": "missing_vendor_source",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input set differs from snapshot; missing=['sui-framework/sources/accumulator.move']; extra=[]"
+    },
+    {
+      "case": "changed_vendor_source",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input changed: sui-framework/sources/accumulator.move"
+    },
+    {
+      "case": "missing_vendor_test",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input set differs from snapshot; missing=['walrus/tests/e2e_runner.move']; extra=[]"
+    },
+    {
+      "case": "changed_vendor_test",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input changed: walrus/tests/e2e_runner.move"
+    },
+    {
+      "case": "missing_vendor_manifest",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input set differs from snapshot; missing=['wal/Move.toml']; extra=[]"
+    },
+    {
+      "case": "changed_vendor_manifest",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input changed: wal/Move.toml"
+    },
+    {
+      "case": "missing_vendor_published_manifest",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input set differs from snapshot; missing=['wal/Published.toml']; extra=[]"
+    },
+    {
+      "case": "changed_vendor_published_manifest",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input changed: wal/Published.toml"
+    },
+    {
+      "case": "duplicate_snapshot_path",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Duplicate offline vendor snapshot path: sui-framework/Move.toml"
+    },
+    {
+      "case": "invalid_snapshot_path_absolute",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid offline vendor snapshot path: /tmp/escape.move"
+    },
+    {
+      "case": "invalid_snapshot_path_parent_escape",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid offline vendor snapshot path: sui-framework/../../escape.move"
+    },
+    {
+      "case": "invalid_snapshot_path_dot_component",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid offline vendor snapshot path: sui-framework/./Move.toml"
+    },
+    {
+      "case": "invalid_snapshot_path_empty_component",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid offline vendor snapshot path: sui-framework//Move.toml"
+    },
+    {
+      "case": "invalid_snapshot_path_wrong_package_prefix",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid offline vendor snapshot path: wal/Move.toml"
+    },
+    {
+      "case": "invalid_snapshot_path_backslash",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid offline vendor snapshot path: 'sui-framework\\\\Move.toml'"
+    },
+    {
+      "case": "invalid_snapshot_path_control_character",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid offline vendor snapshot path: 'sui-framework/\\x00Move.toml'"
+    },
+    {
+      "case": "invalid_snapshot_sha256",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid offline vendor snapshot SHA256: sui-framework/Move.toml"
+    },
+    {
+      "case": "duplicate_snapshot_package",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Invalid or duplicate offline vendor package"
+    },
+    {
+      "case": "missing_snapshot_package",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor snapshot package set differs from frozen graph"
+    },
+    {
+      "case": "vendor_file_symlink_same_bytes_outside",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor symlink is not a frozen regular input: sui-framework/sources/accumulator.move"
+    },
+    {
+      "case": "vendor_directory_symlink_outside",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor symlink is not a frozen regular input: escape"
+    },
+    {
+      "case": "vendor_non_regular_fifo",
+      "expected_exit": "nonzero",
+      "actual_exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "ERROR: Offline vendor input is not a regular file or directory: not-regular"
+    }
+  ],
+  "test_count": 40,
+  "passed_count": 40,
+  "positive_count": 3,
+  "negative_count": 37,
+  "actual_vendor_inventory_count": 247,
+  "actual_vendor_inputs_unchanged": true,
+  "sui_business_commands_executed": 0,
+  "business_19_vm_rerun": false,
+  "RPC": false,
+  "signatures": 0,
+  "verified": true,
+  "tool_before_sha256": "25db9f10e98d8f9af1c2ea9c5e88b71d5dbec9a603dae246622e2115bf7bf183",
+  "source_test_script_sha256": "4175dbc757d835a156eda56d4a2b7ebe5dfaeb8656cd1b731d5c06eae763c62f",
+  "business_main_suffix_unchanged": true,
+  "argument_protocol_unchanged": true,
+  "default_test_budget_unchanged": true,
+  "actual_tool_unchanged": true,
+  "vendor_snapshot_sha256": "377ff5463d8f624f4cb5dd09bc0989fb3acf4567caf55c5010af54c792279776",
+  "content_manifest_sha256": "2af27742b1b85cdf32a38473408285fb3eabc9ec52910cc0019ae29a5a5093cc",
+  "remaining_checks": [
+    "No production build or 19 VM rerun after guard hardening; pre-existing business evidence remains historical for its exact earlier tool/source.",
+    "Local external dependency source comparison retains prior scope; Standard/Foundation nested source consistency is outside this bounded fix."
+  ],
+  "handbook": {
+    "version": "1.0 (2026-10-06)",
+    "applicable_sections": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      12
+    ],
+    "evidence": "40 offline preflight controls and exact candidate/before identities; Build/Test guard behavior only; no Release/Deploy/Operate/Monitor completion claim"
+  }
+}

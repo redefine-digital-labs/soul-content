@@ -1,0 +1,32 @@
+{
+  "command": [
+    "python3",
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/scripts/codex/phase_handoff.py",
+    "--repo",
+    "/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df",
+    "--phase",
+    "content9-isolated-candidate",
+    "--goal",
+    "Independent Content9 production candidate and scoped original regression evidence",
+    "--status",
+    "in-progress",
+    "--summary",
+    "Source9 and original manifest unchanged; production PASS;19 original scoped VM PASS; ABI common9 unchanged; integration pending",
+    "--next-action",
+    "Root reviews candidate packages and evidence, then integrates with exact frozen dependency manifest; no original consumer switch",
+    "--changed-path",
+    "packages",
+    "--changed-path",
+    "evidence",
+    "--check",
+    "Independent production build PASS",
+    "--check",
+    "Default-budget19VM PASS",
+    "--output",
+    "HANDOFF.md"
+  ],
+  "exit_code": 2,
+  "stdout": "",
+  "stderr": "error: --repo must resolve to the Soulidity root containing this script: /Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity\n",
+  "fallback": "Direct compact HANDOFF.md because newly initialized isolated Git repo has no HEAD and commits are forbidden; root can run canonical helper at integration."
+}

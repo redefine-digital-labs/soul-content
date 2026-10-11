@@ -1,0 +1,10 @@
+{
+  "config_sha256": "8ee2012260bd454f19fdf55b534b64320dc83806dd4fa7c6aed505460d965b12",
+  "controls": {
+    "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/maker-protocol/scripts/lock_graph.py": "6fc336c8c82b46f1349937efab54e908f802e59ea869250bfdb46fbc0029f39d",
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/maker-publication-extraction/content-independent-current/frozen-original-inputs.json": "dfc25e9da6d607c79ddbe2562a5744fbd26f640eedcc046ccb00a1b5890d816b",
+    "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/maker-protocol/evidence/maker-publication-extraction/replay-runs/1791646822812793000/build-soulidity_content.modules.json": "e4c8f0716bc637cc4bdce08954473d8d40cb4fa0f8d96e59d1e3933dc3f2116d",
+    "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/tools/verify_content_current.py": "1f9981c57b1666fda06768dfbfcec9470cf167542fd5b2211de8872faff1e934",
+    "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/tools/run_content_current.py": "1458918ad99a49dbd104e0a5f784920bec0e3fe4ea2286aba229bfffd0eb1327"
+  }
+}

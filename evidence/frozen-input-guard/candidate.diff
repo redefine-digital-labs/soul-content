@@ -1,0 +1,173 @@
+--- a/tools/verify_candidate.py
++++ b/tools/verify_candidate.py
+@@ -22,6 +22,11 @@
+ CLI_DEFAULT = '/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui'
+ CLI_SHA = '1d7baa7c7314113671415acfa20279b1eedb6ae6d04f286988a00da285e769c3'
+ NINE = sorted('authority authorization blob_custody document kind_registry paid_access paged_store permissions storage'.split())
++EXTERNAL_DEPENDENCIES = {
++    'Sui': ('https://github.com/MystenLabs/sui.git', 'crates/sui-framework/packages/sui-framework', '2a0becb2fcc6989e492981104af67f62f2c9511a', 'sui-framework'),
++    'Walrus': ('https://github.com/MystenLabs/walrus.git', 'mainnet-contracts/walrus', 'a19764ff77f501a79db88dc6d922a2c73848e989', 'walrus'),
++}
++VENDOR_PACKAGES = frozenset(['sui-framework', 'move-stdlib', 'walrus', 'wal'])
+ 
+ 
+ def sha(data):
+@@ -48,6 +53,124 @@
+     if not m:
+         raise ValueError('Expected exact local dependency ' + name + ' in ' + str(package))
+     return (package / m.group(1)).resolve()
++
++
++def dependency_fields(manifest, name):
++    """Read the existing one-line dependency format without substring matches."""
++    selected = []
++    section = None
++    for line in manifest.splitlines():
++        header = re.fullmatch(r'\s*\[([^\]]+)\]\s*(?:#.*)?', line)
++        if header:
++            section = header.group(1)
++        elif section == 'dependencies' and re.match(r'^\s*' + re.escape(name) + r'\s*=', line):
++            selected.append(line)
++    if len(selected) != 1:
++        raise ValueError('Expected one selected external dependency: ' + name)
++    entry = re.fullmatch(r'\s*' + re.escape(name) + r'\s*=\s*\{(.*)\}\s*(?:#.*)?', selected[0])
++    if not entry:
++        raise ValueError('Expected inline selected external dependency: ' + name)
++    fields = {}
++    rest = entry.group(1).strip()
++    field = re.compile(r'''([A-Za-z_][A-Za-z_0-9-]*)\s*=\s*("(?:[^"\\]|\\.)*"|'[^']*'|true|false)''')
++    while rest:
++        match = field.match(rest)
++        if not match or match.group(1) in fields:
++            raise ValueError('Invalid or duplicate dependency field: ' + name)
++        key, value = match.groups()
++        if value.startswith('"'):
++            value = json.loads(value)
++        elif value.startswith("'"):
++            value = value[1:-1]
++        else:
++            value = value == 'true'
++        fields[key] = value
++        rest = rest[match.end():].strip()
++        if rest:
++            if not rest.startswith(','):
++                raise ValueError('Invalid dependency field separator: ' + name)
++            rest = rest[1:].strip()
++            if not rest:
++                raise ValueError('Invalid trailing dependency field separator: ' + name)
++    return fields
++
++
++def verify_external_dependencies(package, root):
++    manifest = (package / 'Move.toml').read_text()
++    for name, (url, subdir, revision, vendor) in EXTERNAL_DEPENDENCIES.items():
++        fields = dependency_fields(manifest, name)
++        if 'git' in fields:
++            if 'local' in fields:
++                raise ValueError('Ambiguous selected external dependency: ' + name)
++            for key, expected in [('git', url), ('subdir', subdir), ('rev', revision)]:
++                if fields.get(key) != expected:
++                    raise ValueError('Selected external dependency ' + key + ' differs from frozen graph: ' + name)
++        else:
++            if not isinstance(fields.get('local'), str) or any(key in fields for key in ['subdir', 'rev']):
++                raise ValueError('Expected unambiguous local external dependency: ' + name)
++            actual_dep = (package / fields['local']).resolve()
++            actual = {str(p.relative_to(actual_dep / 'sources')): sha(p.read_bytes()) for p in (actual_dep / 'sources').rglob('*.move')}
++            frozen_dep = root / 'offline-vendor' / vendor / 'sources'
++            frozen = {str(p.relative_to(frozen_dep)): sha(p.read_bytes()) for p in frozen_dep.rglob('*.move')}
++            if actual != frozen:
++                raise ValueError('Selected local external dependency differs from frozen source: ' + name)
++
++
++def verify_vendor_snapshot(vendor_root, records):
++    """Require the entire offline input inventory, safe paths and exact bytes."""
++    if vendor_root.is_symlink() or not vendor_root.is_dir():
++        raise ValueError('Offline vendor root must be a regular directory')
++    if not isinstance(records, list):
++        raise ValueError('Offline vendor snapshot must be a list')
++    expected = {}
++    packages = set()
++    for record in records:
++        if not isinstance(record, dict) or record.get('name') not in VENDOR_PACKAGES or record['name'] in packages:
++            raise ValueError('Invalid or duplicate offline vendor package')
++        packages.add(record['name'])
++        if not isinstance(record.get('files'), list) or not record['files']:
++            raise ValueError('Offline vendor package must list its files: ' + record['name'])
++        for item in record['files']:
++            if not isinstance(item, dict):
++                raise ValueError('Invalid offline vendor snapshot item')
++            path, digest = item.get('path'), item.get('sha256')
++            if not isinstance(path, str) or '\\' in path or any(ord(c) < 32 for c in path):
++                raise ValueError('Invalid offline vendor snapshot path: ' + repr(path))
++            parts = path.split('/')
++            if len(parts) < 2 or parts[0] != record['name'] or any(part in ['', '.', '..'] for part in parts):
++                raise ValueError('Invalid offline vendor snapshot path: ' + path)
++            if path in expected:
++                raise ValueError('Duplicate offline vendor snapshot path: ' + path)
++            if not isinstance(digest, str) or not re.fullmatch(r'[0-9a-f]{64}', digest):
++                raise ValueError('Invalid offline vendor snapshot SHA256: ' + path)
++            expected[path] = digest
++    if packages != VENDOR_PACKAGES:
++        raise ValueError('Offline vendor snapshot package set differs from frozen graph')
++    actual = {}
++    for path in vendor_root.rglob('*'):
++        relative = str(path.relative_to(vendor_root))
++        if path.is_symlink():
++            raise ValueError('Offline vendor symlink is not a frozen regular input: ' + relative)
++        if path.is_file():
++            actual[relative] = path
++        elif not path.is_dir():
++            raise ValueError('Offline vendor input is not a regular file or directory: ' + relative)
++    missing, extra = sorted(expected.keys() - actual.keys()), sorted(actual.keys() - expected.keys())
++    if missing or extra:
++        raise ValueError('Offline vendor input set differs from snapshot; missing=' + repr(missing) + '; extra=' + repr(extra))
++    boundary = vendor_root.resolve()
++    for relative, path in actual.items():
++        try:
++            path.resolve(strict=True).relative_to(boundary)
++        except ValueError:
++            raise ValueError('Offline vendor input escapes frozen root: ' + relative)
++        if sha(path.read_bytes()) != expected[relative]:
++            raise ValueError('Offline vendor input changed: ' + relative)
++
++
++def verify_frozen_inputs(package, root):
++    verify_vendor_snapshot(root / 'offline-vendor', json.loads((root / 'evidence/vendor-snapshot.json').read_text()))
++    verify_external_dependencies(package, root)
+ 
+ 
+ def rewrite_dependencies(package, replacements, diffs):
+@@ -133,21 +256,7 @@
+     for item in json.loads((root / 'evidence/test-provenance.json').read_text())['files']:
+         if sha((root / item['file']).read_bytes()) != item['candidate_sha256']:
+             raise ValueError('Scoped original test fixture changed: ' + item['file'])
+-    manifest = (package / 'Move.toml').read_text()
+-    for name, revision, vendor in [('Sui', '2a0becb2fcc6989e492981104af67f62f2c9511a', 'sui-framework'), ('Walrus', 'a19764ff77f501a79db88dc6d922a2c73848e989', 'walrus')]:
+-        match = re.search(r'^' + name + r'\s*=\s*\{([^\n]+)\}', manifest, re.M)
+-        if not match:
+-            raise ValueError('Selected external dependency missing: ' + name)
+-        if 'git' in match.group(1):
+-            if not re.search(r'rev\s*=\s*"' + revision + r'"', match.group(1)):
+-                raise ValueError('Selected external dependency revision differs from frozen graph: ' + name)
+-        else:
+-            actual_dep = local_dependency(package, name)
+-            actual = {str(p.relative_to(actual_dep / 'sources')): sha(p.read_bytes()) for p in (actual_dep / 'sources').rglob('*.move')}
+-            frozen_dep = root / 'offline-vendor' / vendor / 'sources'
+-            frozen = {str(p.relative_to(frozen_dep)): sha(p.read_bytes()) for p in frozen_dep.rglob('*.move')}
+-            if actual != frozen:
+-                raise ValueError('Selected local external dependency differs from frozen source: ' + name)
++    verify_frozen_inputs(package, root)
+     standard = local_dependency(package, 'SoulidityStandard')
+     foundation = local_dependency(package, 'SoulidityFoundation')
+     for dep in [standard, foundation]:
+@@ -162,10 +271,6 @@
+                 frozen = root / 'packages' / frozen_name / 'sources' / path.name
+             if not frozen.exists() or path.read_bytes() != frozen.read_bytes():
+                 raise ValueError('Selected dependency source differs from frozen graph: ' + str(path))
+-    for record in json.loads((root / 'evidence/vendor-snapshot.json').read_text()):
+-        for item in record['files']:
+-            if sha((root / 'offline-vendor' / item['path']).read_bytes()) != item['sha256']:
+-                raise ValueError('Offline vendor input changed: ' + item['path'])
+     run = root / 'evidence/verifier-runs' / (time.strftime('%Y%m%d-%H%M%S') + '-' + uuid.uuid4().hex[:8])
+     graph = run / 'graph'
+     graph.mkdir(parents=True)

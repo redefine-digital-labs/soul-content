@@ -1,0 +1,31 @@
+{
+  "package": "soulidity_native",
+  "command": [
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/contract-rebuild/local-ptb-2026-10-08/tooling/sui",
+    "move",
+    "build",
+    "--path",
+    "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_native",
+    "--install-dir",
+    "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/actual-consumer-builds/soulidity_native/install",
+    "--dump-bytecode-as-base64",
+    "--no-tree-shaking",
+    "--with-unpublished-dependencies"
+  ],
+  "exit_code": 0,
+  "tool_sha256": "1d7baa7c7314113671415acfa20279b1eedb6ae6d04f286988a00da285e769c3",
+  "inputs_before": {
+    "Move.toml": "b707abfd6f9bd247e4363303243935b07ba427e13fe4b83da4b4fe83dcda86ea",
+    "Move.lock": "b1c4a6f89058c279abafb3d836db3d2befe9c9499fa8ad9587b5de19c2651a30"
+  },
+  "inputs_after": {
+    "Move.toml": "b707abfd6f9bd247e4363303243935b07ba427e13fe4b83da4b4fe83dcda86ea",
+    "Move.lock": "b1c4a6f89058c279abafb3d836db3d2befe9c9499fa8ad9587b5de19c2651a30"
+  },
+  "input_lock_preserved": true,
+  "dump_sha256": "56496c5687b7a66f883d20c77191d0830a1a9b067393dd217a7bed71db6ff600",
+  "equals_before_content_file_locators_dump": true,
+  "transactions": 0,
+  "source_authority_evidence": "../source-authority-cutover.json",
+  "not_release_or_published_linkage_proof": true
+}

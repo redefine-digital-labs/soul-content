@@ -1,0 +1,320 @@
+{
+  "id": {
+    "address": "walrus",
+    "name": "init"
+  },
+  "doc": null,
+  "immediate_dependencies": [
+    {
+      "address": "std",
+      "name": "ascii"
+    },
+    {
+      "address": "std",
+      "name": "type_name"
+    },
+    {
+      "address": "sui",
+      "name": "address"
+    },
+    {
+      "address": "sui",
+      "name": "clock"
+    },
+    {
+      "address": "sui",
+      "name": "object"
+    },
+    {
+      "address": "sui",
+      "name": "package"
+    },
+    {
+      "address": "sui",
+      "name": "transfer"
+    },
+    {
+      "address": "sui",
+      "name": "tx_context"
+    },
+    {
+      "address": "walrus",
+      "name": "display"
+    },
+    {
+      "address": "walrus",
+      "name": "events"
+    },
+    {
+      "address": "walrus",
+      "name": "staking"
+    },
+    {
+      "address": "walrus",
+      "name": "system"
+    },
+    {
+      "address": "walrus",
+      "name": "upgrade"
+    }
+  ],
+  "attributes": [],
+  "functions": {
+    "init": {
+      "source_index": 0,
+      "index": 0,
+      "doc": " Initializes the system by creating an init cap and transferring it to the sender.\n\n This allows the sender to call the function to actually initialize the system\n with the corresponding parameters. Once that function is called, the cap is destroyed.",
+      "attributes": [],
+      "visibility": "Private",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "otw",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "walrus",
+                "name": "init"
+              },
+              "name": "INIT",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "ctx",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    },
+    "initialize_walrus": {
+      "source_index": 1,
+      "index": 1,
+      "doc": " Initializes Walrus and shares the system and staking objects.\n\n This can only be called once, after which the `InitCap` is destroyed.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "init_cap",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "walrus",
+                "name": "init"
+              },
+              "name": "InitCap",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "upgrade_cap",
+          "type_": {
+            "Datatype": {
+              "module": {
+                "address": "sui",
+                "name": "package"
+              },
+              "name": "UpgradeCap",
+              "type_arguments": []
+            }
+          }
+        },
+        {
+          "name": "epoch_zero_duration",
+          "type_": "u64"
+        },
+        {
+          "name": "epoch_duration",
+          "type_": "u64"
+        },
+        {
+          "name": "n_shards",
+          "type_": "u16"
+        },
+        {
+          "name": "max_epochs_ahead",
+          "type_": "u32"
+        },
+        {
+          "name": "clock",
+          "type_": {
+            "Reference": [
+              false,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "clock"
+                  },
+                  "name": "Clock",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "ctx",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "sui",
+                    "name": "tx_context"
+                  },
+                  "name": "TxContext",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": [
+        {
+          "Datatype": {
+            "module": {
+              "address": "walrus",
+              "name": "upgrade"
+            },
+            "name": "EmergencyUpgradeCap",
+            "type_arguments": []
+          }
+        }
+      ]
+    },
+    "migrate": {
+      "source_index": 2,
+      "index": 2,
+      "doc": " Migrates the staking and system objects to the new package ID.\n\n This must be called in the new package after an upgrade is committed\n to emit an event that informs all storage nodes and prevent previous package\n versions from being used.\n\n Requires the migration epoch to be set first on the staking object, which then\n enables the migration at the start of the next epoch.",
+      "attributes": [],
+      "visibility": "Public",
+      "entry": false,
+      "type_parameters": [],
+      "parameters": [
+        {
+          "name": "staking",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "walrus",
+                    "name": "staking"
+                  },
+                  "name": "Staking",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "system",
+          "type_": {
+            "Reference": [
+              true,
+              {
+                "Datatype": {
+                  "module": {
+                    "address": "walrus",
+                    "name": "system"
+                  },
+                  "name": "System",
+                  "type_arguments": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "return_": []
+    }
+  },
+  "structs": {
+    "INIT": {
+      "index": 0,
+      "doc": " The OTW to create `Publisher` and `Display` objects.",
+      "attributes": [],
+      "abilities": [
+        "Drop"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "dummy_field": {
+            "index": 0,
+            "type_": "bool"
+          }
+        }
+      }
+    },
+    "InitCap": {
+      "index": 1,
+      "doc": " Must only be created by `init`.",
+      "attributes": [],
+      "abilities": [
+        "Key",
+        "Store"
+      ],
+      "type_parameters": [],
+      "fields": {
+        "positional_fields": false,
+        "fields": {
+          "id": {
+            "index": 0,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "object"
+                },
+                "name": "UID",
+                "type_arguments": []
+              }
+            }
+          },
+          "publisher": {
+            "index": 1,
+            "doc": null,
+            "type_": {
+              "Datatype": {
+                "module": {
+                  "address": "sui",
+                  "name": "package"
+                },
+                "name": "Publisher",
+                "type_arguments": []
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "enums": {}
+}

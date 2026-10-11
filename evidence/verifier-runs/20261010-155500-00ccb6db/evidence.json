@@ -1,0 +1,17 @@
+{
+  "source_package": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content",
+  "run": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/verifier-runs/20261010-155500-00ccb6db",
+  "content_root_modules": 9,
+  "production_exit_code": 0,
+  "no_remote_graph_dependencies": true,
+  "default_budget_unchanged": true,
+  "actual_unit_tests": 19,
+  "actual_unit_passed": 19,
+  "actual_unit_failed": 0,
+  "no_consumer_or_chain_cutover": true,
+  "not_legacy_published_type_compatibility": true,
+  "unit_exit_code": 0,
+  "all_normalized_root_modules_equal": true,
+  "verified": true,
+  "test_provenance": "Original storage_epoch12 and pure capacity7; exact namespace/fixture adaptation and original hashes are in evidence/test-provenance.json. No Core/Native/paid-access whole journey is claimed."
+}

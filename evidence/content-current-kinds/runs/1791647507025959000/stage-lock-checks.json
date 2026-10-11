@@ -1,0 +1,30 @@
+[
+  {
+    "root": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_content",
+    "node": "SoulidityContent",
+    "manifest": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_content/Move.toml",
+    "digest": "A8E34D622ECD7AC3013CFBF4CF641183847AFF76E6B528F76D92A111DB3EEBE9",
+    "preimage": "deps = { SoulidityContentKinds = { Local = { local = \"/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_content_kinds\" }, override = false, use-environment = \"mainnet\" }, SoulidityFoundation = { Local = { local = \"/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_foundation\" }, override = false, use-environment = \"mainnet\" }, SoulidityStandard = { Local = { local = \"/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_standard\" }, override = false, use-environment = \"mainnet\" }, Sui = { Git = { git = \"https://github.com/MystenLabs/sui.git\", rev = \"2a0becb2fcc6989e492981104af67f62f2c9511a\", subdir = \"crates/sui-framework/packages/sui-framework\" }, override = true, use-environment = \"mainnet\" }, Walrus = { Git = { git = \"https://github.com/MystenLabs/walrus.git\", rev = \"a19764ff77f501a79db88dc6d922a2c73848e989\", subdir = \"mainnet-contracts/walrus\" }, override = false, use-environment = \"mainnet\" } }\n"
+  },
+  {
+    "root": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_content",
+    "node": "SoulidityContentKinds",
+    "manifest": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_content_kinds/Move.toml",
+    "digest": "D8F84FF524A818A0AE43A5F3FE25F4495915FE81B9CC4C746D23E807AEBB2FE6",
+    "preimage": "deps = { Sui = { Git = { git = \"https://github.com/MystenLabs/sui.git\", rev = \"2a0becb2fcc6989e492981104af67f62f2c9511a\", subdir = \"crates/sui-framework/packages/sui-framework\" }, override = true, use-environment = \"mainnet\" } }\n"
+  },
+  {
+    "root": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_content",
+    "node": "SoulidityFoundation",
+    "manifest": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_foundation/Move.toml",
+    "digest": "D8F84FF524A818A0AE43A5F3FE25F4495915FE81B9CC4C746D23E807AEBB2FE6",
+    "preimage": "deps = { Sui = { Git = { git = \"https://github.com/MystenLabs/sui.git\", rev = \"2a0becb2fcc6989e492981104af67f62f2c9511a\", subdir = \"crates/sui-framework/packages/sui-framework\" }, override = true, use-environment = \"mainnet\" } }\n"
+  },
+  {
+    "root": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_content",
+    "node": "SoulidityStandard",
+    "manifest": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/content-current-kinds/runs/1791647507025959000/staged/soulidity_standard/Move.toml",
+    "digest": "D8F84FF524A818A0AE43A5F3FE25F4495915FE81B9CC4C746D23E807AEBB2FE6",
+    "preimage": "deps = { Sui = { Git = { git = \"https://github.com/MystenLabs/sui.git\", rev = \"2a0becb2fcc6989e492981104af67f62f2c9511a\", subdir = \"crates/sui-framework/packages/sui-framework\" }, override = true, use-environment = \"mainnet\" } }\n"
+  }
+]

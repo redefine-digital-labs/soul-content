@@ -1,0 +1,11 @@
+[package]
+name = "SoulidityContent"
+edition = "2024"
+
+[dependencies]
+SoulidityStandard = { local = "../soulidity_standard" }
+SoulidityFoundation = { local = "../soulidity_foundation" }
+Sui = { local = "../sui-framework", override = true }
+Walrus = { local = "../walrus" }
+[addresses]
+soulidity_content = "0x0"

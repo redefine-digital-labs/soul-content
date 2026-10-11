@@ -1,0 +1,1773 @@
+{
+  "import_files_hash_match": true,
+  "source_rows": [
+    {
+      "module": "authority",
+      "original_match": true,
+      "candidate_match": true
+    },
+    {
+      "module": "authorization",
+      "original_match": true,
+      "candidate_match": true
+    },
+    {
+      "module": "blob_custody",
+      "original_match": true,
+      "candidate_match": true
+    },
+    {
+      "module": "document",
+      "original_match": true,
+      "candidate_match": true
+    },
+    {
+      "module": "kind_registry",
+      "original_match": true,
+      "candidate_match": true
+    },
+    {
+      "module": "paged_store",
+      "original_match": true,
+      "candidate_match": true
+    },
+    {
+      "module": "paid_access",
+      "original_match": true,
+      "candidate_match": true
+    },
+    {
+      "module": "permissions",
+      "original_match": true,
+      "candidate_match": true
+    },
+    {
+      "module": "storage",
+      "original_match": true,
+      "candidate_match": true
+    }
+  ],
+  "actual_root_module_names": [
+    "authority",
+    "authorization",
+    "blob_custody",
+    "document",
+    "kind_registry",
+    "paged_store",
+    "paid_access",
+    "permissions",
+    "storage"
+  ],
+  "module_dependency_excluded_found": false,
+  "own_alias": {
+    "literal": "../move/soulidity_content",
+    "target": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content",
+    "expected": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content"
+  },
+  "manifest_diff": "--- \n+++ \n@@ -3,8 +3,8 @@\n edition = \"2024\"\n \n [dependencies]\n-SoulidityStandard = { local = \"../soulidity_standard\" }\n-SoulidityFoundation = { local = \"../soulidity_foundation\" }\n+SoulidityStandard = { local = \"../../packages/soulidity_standard\" }\n+SoulidityFoundation = { local = \"../../packages/soulidity_foundation\" }\n Sui = { git = \"https://github.com/MystenLabs/sui.git\", subdir = \"crates/sui-framework/packages/sui-framework\", rev = \"2a0becb2fcc6989e492981104af67f62f2c9511a\", override = true }\n Walrus = { git = \"https://github.com/MystenLabs/walrus.git\", subdir = \"mainnet-contracts/walrus\", rev = \"a19764ff77f501a79db88dc6d922a2c73848e989\" }\n \n",
+  "immutable_dependency_import_match": {
+    "packages/soulidity_standard": true,
+    "packages/soulidity_foundation": true,
+    "offline-vendor": true,
+    "frozen-original": true
+  },
+  "vendor_snapshot_hashes_match": true,
+  "vendor_inventory_complete": {
+    "sui-framework": true,
+    "move-stdlib": true,
+    "walrus": true,
+    "wal": true
+  },
+  "cli_sha256": "1d7baa7c7314113671415acfa20279b1eedb6ae6d04f286988a00da285e769c3",
+  "ABI": [
+    {
+      "module": "authority",
+      "public_count": 5,
+      "struct_count": 1,
+      "normalized_source_model_equal": true
+    },
+    {
+      "module": "authorization",
+      "public_count": 30,
+      "struct_count": 6,
+      "normalized_source_model_equal": true
+    },
+    {
+      "module": "blob_custody",
+      "public_count": 6,
+      "struct_count": 2,
+      "normalized_source_model_equal": true
+    },
+    {
+      "module": "document",
+      "public_count": 27,
+      "struct_count": 2,
+      "normalized_source_model_equal": true
+    },
+    {
+      "module": "kind_registry",
+      "public_count": 35,
+      "struct_count": 7,
+      "normalized_source_model_equal": true
+    },
+    {
+      "module": "paged_store",
+      "public_count": 9,
+      "struct_count": 2,
+      "normalized_source_model_equal": true
+    },
+    {
+      "module": "paid_access",
+      "public_count": 23,
+      "struct_count": 11,
+      "normalized_source_model_equal": true
+    },
+    {
+      "module": "permissions",
+      "public_count": 4,
+      "struct_count": 0,
+      "normalized_source_model_equal": true
+    },
+    {
+      "module": "storage",
+      "public_count": 10,
+      "struct_count": 1,
+      "normalized_source_model_equal": true
+    }
+  ],
+  "ABI_total_public": 149,
+  "ABI_total_struct": 32,
+  "actual_run": {
+    "source_package": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content",
+    "run": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/evidence/verifier-runs/20261010-155500-00ccb6db",
+    "content_root_modules": 9,
+    "production_exit_code": 0,
+    "no_remote_graph_dependencies": true,
+    "default_budget_unchanged": true,
+    "actual_unit_tests": 19,
+    "actual_unit_passed": 19,
+    "actual_unit_failed": 0,
+    "no_consumer_or_chain_cutover": true,
+    "not_legacy_published_type_compatibility": true,
+    "unit_exit_code": 0,
+    "all_normalized_root_modules_equal": true,
+    "verified": true,
+    "test_provenance": "Original storage_epoch12 and pure capacity7; exact namespace/fixture adaptation and original hashes are in evidence/test-provenance.json. No Core/Native/paid-access whole journey is claimed."
+  },
+  "compiled_actual9": [
+    {
+      "module": "authority",
+      "raw_equal": true,
+      "normalized_equal": true,
+      "baseline_sha": "ab72d96d1887ec1a8b1f2ac03215ef74550c247587e2be75fdbe3decf9bbeb2d",
+      "actual_sha": "ab72d96d1887ec1a8b1f2ac03215ef74550c247587e2be75fdbe3decf9bbeb2d",
+      "baseline_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "authority"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000887b",
+          "module": "soul"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "ascii"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "type_name"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        }
+      ],
+      "actual_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "authority"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000887b",
+          "module": "soul"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "ascii"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "type_name"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        }
+      ]
+    },
+    {
+      "module": "authorization",
+      "raw_equal": true,
+      "normalized_equal": true,
+      "baseline_sha": "a66bea5b97decaacd71387303ec588b0e2c283c619b9b9da28d6eaa2f9a26087",
+      "actual_sha": "a66bea5b97decaacd71387303ec588b0e2c283c619b9b9da28d6eaa2f9a26087",
+      "baseline_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "authorization"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "authority"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "permissions"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000887b",
+          "module": "soul"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "bcs"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "hash"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "option"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "vector"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "clock"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "event"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "table"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        }
+      ],
+      "actual_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "authorization"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "authority"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "permissions"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000887b",
+          "module": "soul"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "bcs"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "hash"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "option"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "vector"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "clock"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "event"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "table"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        }
+      ]
+    },
+    {
+      "module": "blob_custody",
+      "raw_equal": false,
+      "normalized_equal": true,
+      "baseline_sha": "0257ef471a743c31e3066c9ef35e53dda7d2f4bf1f4af7b3be6952bf193fae7c",
+      "actual_sha": "fc719108f8298cd28509afe3cfb8a23b10a7654643e41eb6e1c4f85e080c8edc",
+      "baseline_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "blob_custody"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "storage"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "vector"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "dynamic_object_field"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000d361",
+          "module": "blob"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000d361",
+          "module": "system"
+        }
+      ],
+      "actual_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "blob_custody"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "storage"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "vector"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "dynamic_object_field"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        },
+        {
+          "address": "0xfdc88f7d7cf30afab2f82e8380d11ee8f70efb90e863d1de8616fae1bb09ea77",
+          "module": "blob"
+        },
+        {
+          "address": "0xfdc88f7d7cf30afab2f82e8380d11ee8f70efb90e863d1de8616fae1bb09ea77",
+          "module": "system"
+        }
+      ]
+    },
+    {
+      "module": "document",
+      "raw_equal": true,
+      "normalized_equal": true,
+      "baseline_sha": "ef5b50511a52f7a8cdba1fdbddca5422c4828f276d5313e5b3502b827069e9e7",
+      "actual_sha": "ef5b50511a52f7a8cdba1fdbddca5422c4828f276d5313e5b3502b827069e9e7",
+      "baseline_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "document"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "kind_registry"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "storage"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "bcs"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "option"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "string"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "vector"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        }
+      ],
+      "actual_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "document"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "kind_registry"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "storage"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "bcs"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "option"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "string"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "vector"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        }
+      ]
+    },
+    {
+      "module": "kind_registry",
+      "raw_equal": true,
+      "normalized_equal": true,
+      "baseline_sha": "3df16dd9c890ff13c0edbefc93da4461937da249abc22e7e0169030aa674a896",
+      "actual_sha": "3df16dd9c890ff13c0edbefc93da4461937da249abc22e7e0169030aa674a896",
+      "baseline_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "kind_registry"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "permissions"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "string"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "event"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "table"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "transfer"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        }
+      ],
+      "actual_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "kind_registry"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "permissions"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "string"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "event"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "table"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "transfer"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        }
+      ]
+    },
+    {
+      "module": "paged_store",
+      "raw_equal": true,
+      "normalized_equal": true,
+      "baseline_sha": "3ce87a38d23136d1d7eceace909f49c4d839964f15e9189e7caaa2425b94f349",
+      "actual_sha": "3ce87a38d23136d1d7eceace909f49c4d839964f15e9189e7caaa2425b94f349",
+      "baseline_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "paged_store"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "bcs"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "vector"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "table"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        }
+      ],
+      "actual_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "paged_store"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "bcs"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "vector"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "table"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        }
+      ]
+    },
+    {
+      "module": "paid_access",
+      "raw_equal": true,
+      "normalized_equal": true,
+      "baseline_sha": "8d9a939ced8b0b080dc1b17c28537668f897e0011c702d0a08b141e46b2e9384",
+      "actual_sha": "8d9a939ced8b0b080dc1b17c28537668f897e0011c702d0a08b141e46b2e9384",
+      "baseline_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "paid_access"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "authority"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "kind_registry"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000005b0d",
+          "module": "economics"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000887b",
+          "module": "soul"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "bcs"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "hash"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "option"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "u64"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "clock"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "coin"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "event"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "package"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "table"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        }
+      ],
+      "actual_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "paid_access"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "authority"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "kind_registry"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000005b0d",
+          "module": "economics"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000887b",
+          "module": "soul"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "bcs"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "hash"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "option"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "u64"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "clock"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "coin"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "event"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "package"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "table"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "tx_context"
+        }
+      ]
+    },
+    {
+      "module": "permissions",
+      "raw_equal": true,
+      "normalized_equal": true,
+      "baseline_sha": "77ccb458d7d3944aa0185a39bb6cfff2699da2c9cfaab5124c025b13df7e67bd",
+      "actual_sha": "77ccb458d7d3944aa0185a39bb6cfff2699da2c9cfaab5124c025b13df7e67bd",
+      "baseline_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "permissions"
+        }
+      ],
+      "actual_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "permissions"
+        }
+      ]
+    },
+    {
+      "module": "storage",
+      "raw_equal": false,
+      "normalized_equal": true,
+      "baseline_sha": "3335bee99540611714e892d9d0cc2f2ee777a67ef13c4e840086b516d59de823",
+      "actual_sha": "5517a9600c4177bf8ac4056d43edb71d8f27d0a209f75e93e11768d3616af112",
+      "baseline_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "storage"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "option"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000d361",
+          "module": "blob"
+        },
+        {
+          "address": "0x000000000000000000000000000000000000000000000000000000000000d361",
+          "module": "system"
+        }
+      ],
+      "actual_handles": [
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "module": "storage"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "module": "option"
+        },
+        {
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "module": "object"
+        },
+        {
+          "address": "0xfdc88f7d7cf30afab2f82e8380d11ee8f70efb90e863d1de8616fae1bb09ea77",
+          "module": "blob"
+        },
+        {
+          "address": "0xfdc88f7d7cf30afab2f82e8380d11ee8f70efb90e863d1de8616fae1bb09ea77",
+          "module": "system"
+        }
+      ]
+    }
+  ],
+  "actual_test_output_tail": [
+    "[ PASS    ] soulidity_content::storage_epoch_tests::certification_batch_rejects_missing_transport_hash",
+    "[ PASS    ] soulidity_content::storage_epoch_tests::certification_batch_rejects_wrong_digest_length",
+    "[ PASS    ] soulidity_content::storage_epoch_tests::certified_blob_expires_at_real_walrus_epoch_boundary",
+    "[ PASS    ] soulidity_content::storage_epoch_tests::earlier_successful_batch_cannot_hide_a_later_actual_epoch_change",
+    "[ PASS    ] soulidity_content::storage_epoch_tests::extended_blob_remains_available_past_original_reference_end",
+    "Test result: OK. Total tests: 19; passed: 19; failed: 0"
+  ],
+  "source52": {
+    "count": 52,
+    "original_sha_match": true,
+    "current_writer_sha_match": true,
+    "owner_strings": [
+      "original record Owner retained; this mapping does not reassign"
+    ],
+    "content9_writers": [
+      {
+        "relative_original": "move/soulidity_content/sources/authority.move",
+        "canonical_current_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/authority.move",
+        "state": "retained / mixed extraction pending",
+        "target_module": "CONTENT",
+        "actual_source_repository": "retained:soulidity"
+      },
+      {
+        "relative_original": "move/soulidity_content/sources/authorization.move",
+        "canonical_current_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/authorization.move",
+        "state": "retained / mixed extraction pending",
+        "target_module": "CONTENT",
+        "actual_source_repository": "retained:soulidity"
+      },
+      {
+        "relative_original": "move/soulidity_content/sources/blob_custody.move",
+        "canonical_current_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/blob_custody.move",
+        "state": "retained / mixed extraction pending",
+        "target_module": "CONTENT",
+        "actual_source_repository": "retained:soulidity"
+      },
+      {
+        "relative_original": "move/soulidity_content/sources/document.move",
+        "canonical_current_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/document.move",
+        "state": "retained / mixed extraction pending",
+        "target_module": "CONTENT",
+        "actual_source_repository": "retained:soulidity"
+      },
+      {
+        "relative_original": "move/soulidity_content/sources/kind_registry.move",
+        "canonical_current_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/kind_registry.move",
+        "state": "retained / mixed extraction pending",
+        "target_module": "CONTENT",
+        "actual_source_repository": "retained:soulidity"
+      },
+      {
+        "relative_original": "move/soulidity_content/sources/paged_store.move",
+        "canonical_current_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/paged_store.move",
+        "state": "retained / mixed extraction pending",
+        "target_module": "CONTENT",
+        "actual_source_repository": "retained:soulidity"
+      },
+      {
+        "relative_original": "move/soulidity_content/sources/paid_access.move",
+        "canonical_current_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/paid_access.move",
+        "state": "retained / mixed extraction pending",
+        "target_module": "CONTENT",
+        "actual_source_repository": "retained:soulidity"
+      },
+      {
+        "relative_original": "move/soulidity_content/sources/permissions.move",
+        "canonical_current_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/permissions.move",
+        "state": "retained / mixed extraction pending",
+        "target_module": "CONTENT",
+        "actual_source_repository": "retained:soulidity"
+      },
+      {
+        "relative_original": "move/soulidity_content/sources/storage.move",
+        "canonical_current_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/storage.move",
+        "state": "retained / mixed extraction pending",
+        "target_module": "CONTENT",
+        "actual_source_repository": "retained:soulidity"
+      }
+    ]
+  },
+  "test_original_body_review": [
+    {
+      "file": "packages/soulidity_content/tests/storage_epoch_tests.move",
+      "original_hash_match": true,
+      "preserved_function_body": true,
+      "actual_test_annotations": 12
+    },
+    {
+      "file": "packages/soulidity_content/tests/storage_fixture.move",
+      "original_hash_match": true,
+      "preserved_function_body": true,
+      "actual_test_annotations": 0
+    },
+    {
+      "file": "packages/soulidity_content/tests/capacity_tests.move",
+      "original_hash_match": true,
+      "preserved_function_body": true,
+      "actual_test_annotations": 7
+    },
+    {
+      "file": "packages/soulidity_content/tests/fixtures.move",
+      "original_hash_match": null,
+      "preserved_function_body": true,
+      "actual_test_annotations": 0
+    }
+  ],
+  "helper_failures": {
+    "malformed_bytecode_rejected": [
+      true,
+      true,
+      true
+    ],
+    "ambiguous_role_rejected": true,
+    "main_exception_exit": 2,
+    "build_failure_returns_nonzero": true,
+    "test_or_mismatch_failure_returns_nonzero": true,
+    "precondition_failures_before_graph_creation": [
+      "CLI SHA",
+      "source exactly9",
+      "source fixedSHA",
+      "test fixedSHA",
+      "selected external rev/source",
+      "Standard/Foundation source",
+      "vendorSHA"
+    ]
+  },
+  "historical_unpublished_export": {
+    "original_count": 17,
+    "candidate_count": 14,
+    "common_count": 14,
+    "all_common_raw_equal": true,
+    "limit": "same unpublished graph; not old published type compatibility"
+  },
+  "unchanged_review_queue_and_scope": {
+    "queue_sha_equal": true,
+    "scope_sha_equal": true,
+    "scope_records": 157,
+    "done_claimed": false
+  },
+  "precise_bytecode_difference_scope": [
+    {
+      "module": "authority",
+      "raw_changed": false,
+      "address_table_bounds_equal": true,
+      "all_non_address_bytes_identical": true
+    },
+    {
+      "module": "authorization",
+      "raw_changed": false,
+      "address_table_bounds_equal": true,
+      "all_non_address_bytes_identical": true
+    },
+    {
+      "module": "blob_custody",
+      "raw_changed": true,
+      "address_table_bounds_equal": true,
+      "all_non_address_bytes_identical": true
+    },
+    {
+      "module": "document",
+      "raw_changed": false,
+      "address_table_bounds_equal": true,
+      "all_non_address_bytes_identical": true
+    },
+    {
+      "module": "kind_registry",
+      "raw_changed": false,
+      "address_table_bounds_equal": true,
+      "all_non_address_bytes_identical": true
+    },
+    {
+      "module": "paged_store",
+      "raw_changed": false,
+      "address_table_bounds_equal": true,
+      "all_non_address_bytes_identical": true
+    },
+    {
+      "module": "paid_access",
+      "raw_changed": false,
+      "address_table_bounds_equal": true,
+      "all_non_address_bytes_identical": true
+    },
+    {
+      "module": "permissions",
+      "raw_changed": false,
+      "address_table_bounds_equal": true,
+      "all_non_address_bytes_identical": true
+    },
+    {
+      "module": "storage",
+      "raw_changed": true,
+      "address_table_bounds_equal": true,
+      "all_non_address_bytes_identical": true
+    }
+  ],
+  "final_source_authority_migration_review": {
+    "source52_count": 52,
+    "source52_unique_original_count": 52,
+    "all52_original_SHA_match": true,
+    "all52_writer_SHA_match": true,
+    "all52_owner_retained": true,
+    "all52_canonical_writer_self_resolving": true,
+    "content_count": 9,
+    "all9_canonical_new_owned_source": true,
+    "old12_total_modules": 12,
+    "content_old12_links": [
+      {
+        "module": "authority",
+        "is_symlink": true,
+        "literal": "../../../../../../../Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/authority.move",
+        "resolved_expected": true,
+        "target_nonlink": true,
+        "same_sha": true
+      },
+      {
+        "module": "authorization",
+        "is_symlink": true,
+        "literal": "../../../../../../../Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/authorization.move",
+        "resolved_expected": true,
+        "target_nonlink": true,
+        "same_sha": true
+      },
+      {
+        "module": "blob_custody",
+        "is_symlink": true,
+        "literal": "../../../../../../../Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/blob_custody.move",
+        "resolved_expected": true,
+        "target_nonlink": true,
+        "same_sha": true
+      },
+      {
+        "module": "document",
+        "is_symlink": true,
+        "literal": "../../../../../../../Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/document.move",
+        "resolved_expected": true,
+        "target_nonlink": true,
+        "same_sha": true
+      },
+      {
+        "module": "founding_library",
+        "preserved_nonlink": true,
+        "sha256": "bcb8c19a0b2647bf568bbac269f02edc920192cef215d39b66a17114a157f461"
+      },
+      {
+        "module": "kind_registry",
+        "is_symlink": true,
+        "literal": "../../../../../../../Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/kind_registry.move",
+        "resolved_expected": true,
+        "target_nonlink": true,
+        "same_sha": true
+      },
+      {
+        "module": "loadout",
+        "preserved_nonlink": true,
+        "sha256": "4ded2bd91fc5557c126db78ae8cbb4abc9807bb34957e230ce46f94309ba7d63"
+      },
+      {
+        "module": "paged_store",
+        "is_symlink": true,
+        "literal": "../../../../../../../Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/paged_store.move",
+        "resolved_expected": true,
+        "target_nonlink": true,
+        "same_sha": true
+      },
+      {
+        "module": "paid_access",
+        "is_symlink": true,
+        "literal": "../../../../../../../Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/paid_access.move",
+        "resolved_expected": true,
+        "target_nonlink": true,
+        "same_sha": true
+      },
+      {
+        "module": "permissions",
+        "is_symlink": true,
+        "literal": "../../../../../../../Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/permissions.move",
+        "resolved_expected": true,
+        "target_nonlink": true,
+        "same_sha": true
+      },
+      {
+        "module": "state_configuration",
+        "preserved_nonlink": true,
+        "sha256": "89963eee546f1b5a5be4a5dbced26b7beb25950a1001ca6498cef4bd15a836ad"
+      },
+      {
+        "module": "storage",
+        "is_symlink": true,
+        "literal": "../../../../../../../Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/storage.move",
+        "resolved_expected": true,
+        "target_nonlink": true,
+        "same_sha": true
+      }
+    ],
+    "source_rows": [
+      {
+        "module": "STANDARD",
+        "relative_original": "move/soulidity_standard/sources/soul.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-standard/move/soulidity_standard/sources/soul.move",
+        "actual_source_repository": "STANDARD",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "POLICY.ASSET_RULES",
+        "relative_original": "move/soulidity_foundation/sources/economics.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_foundation/sources/economics.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "POLICY.PACKAGE_GOVERNANCE",
+        "relative_original": "move/soulidity_foundation/sources/package_roles.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_foundation/sources/package_roles.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "POLICY.ASSET_RULES",
+        "relative_original": "move/soulidity_foundation/sources/revenue.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_foundation/sources/revenue.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "POLICY.ASSET_RULES",
+        "relative_original": "move/soulidity_foundation/sources/source_authority.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_foundation/sources/source_authority.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_model/sources/assembly.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-extensions/move/soulidity_model/sources/assembly.move",
+        "actual_source_repository": "EXTENSIONS",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_model/sources/components.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-extensions/move/soulidity_model/sources/components.move",
+        "actual_source_repository": "EXTENSIONS",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_model/sources/material_policy.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-extensions/move/soulidity_model/sources/material_policy.move",
+        "actual_source_repository": "EXTENSIONS",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_model/sources/policy.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-extensions/move/soulidity_model/sources/policy.move",
+        "actual_source_repository": "EXTENSIONS",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_visual/sources/visual.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-extensions/move/soulidity_visual/sources/visual.move",
+        "actual_source_repository": "EXTENSIONS",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "CONTENT",
+        "relative_original": "move/soulidity_content/sources/authority.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/authority.move",
+        "actual_source_repository": "CONTENT",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "CONTENT",
+        "relative_original": "move/soulidity_content/sources/authorization.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/authorization.move",
+        "actual_source_repository": "CONTENT",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "CONTENT",
+        "relative_original": "move/soulidity_content/sources/blob_custody.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/blob_custody.move",
+        "actual_source_repository": "CONTENT",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "CONTENT",
+        "relative_original": "move/soulidity_content/sources/document.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/document.move",
+        "actual_source_repository": "CONTENT",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "NATIVE.PRODUCER",
+        "relative_original": "move/soulidity_content/sources/founding_library.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/founding_library.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "CONTENT",
+        "relative_original": "move/soulidity_content/sources/kind_registry.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/kind_registry.move",
+        "actual_source_repository": "CONTENT",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_content/sources/loadout.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/loadout.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "CONTENT",
+        "relative_original": "move/soulidity_content/sources/paged_store.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/paged_store.move",
+        "actual_source_repository": "CONTENT",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "CONTENT",
+        "relative_original": "move/soulidity_content/sources/paid_access.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/paid_access.move",
+        "actual_source_repository": "CONTENT",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "CONTENT",
+        "relative_original": "move/soulidity_content/sources/permissions.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/permissions.move",
+        "actual_source_repository": "CONTENT",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_content/sources/state_configuration.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/state_configuration.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "CONTENT",
+        "relative_original": "move/soulidity_content/sources/storage.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/storage.move",
+        "actual_source_repository": "CONTENT",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_application/sources/character.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/character.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_application/sources/forms.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/forms.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_application/sources/growth.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/growth.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_application/sources/issuance.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/issuance.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_application/sources/output.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/output.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_application/sources/physical_metadata.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/physical_metadata.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_application/sources/publication_rules.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/publication_rules.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_application/sources/resale.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/resale.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_application/sources/vault.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/vault.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_application/sources/visual_capture.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_application/sources/visual_capture.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "COMMUNITY",
+        "relative_original": "move/soulidity_community/sources/community_posts.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-community/move/soulidity_community/sources/community_posts.move",
+        "actual_source_repository": "COMMUNITY",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "COMMUNITY",
+        "relative_original": "move/soulidity_community/sources/community_votes.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-community/move/soulidity_community/sources/community_votes.move",
+        "actual_source_repository": "COMMUNITY",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "COMMUNITY",
+        "relative_original": "move/soulidity_community/sources/profile.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-community/move/soulidity_community/sources/profile.move",
+        "actual_source_repository": "COMMUNITY",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "COMMUNITY",
+        "relative_original": "move/soulidity_community/sources/social.move",
+        "canonical_writer": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-community/move/soulidity_community/sources/social.move",
+        "actual_source_repository": "COMMUNITY",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "NATIVE.PRODUCER",
+        "relative_original": "move/soulidity_native/sources/birth.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_native/sources/birth.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "NATIVE.PRODUCER",
+        "relative_original": "move/soulidity_native/sources/registry.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_native/sources/registry.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_v1/sources/access.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/access.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "EXTENSIONS",
+        "relative_original": "move/soulidity_v1/sources/application_operator.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/application_operator.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_v1/sources/catalog.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/catalog.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_v1/sources/collection.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/collection.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "NATIVE.PRODUCER",
+        "relative_original": "move/soulidity_v1/sources/custody.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/custody.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_v1/sources/issuer.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/issuer.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MARKET",
+        "relative_original": "move/soulidity_v1/sources/market.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/market.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_v1/sources/metadata.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/metadata.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "NATIVE.PRODUCER",
+        "relative_original": "move/soulidity_v1/sources/native_binding.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/native_binding.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "NATIVE.PRODUCER",
+        "relative_original": "move/soulidity_v1/sources/native_creation.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/native_creation.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_v1/sources/physical.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/physical.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_v1/sources/player.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/player.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_v1/sources/release.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/release.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      },
+      {
+        "module": "MAKER",
+        "relative_original": "move/soulidity_v1/sources/runtime.move",
+        "canonical_writer": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_v1/sources/runtime.move",
+        "actual_source_repository": "retained:soulidity",
+        "original_sha_equal": true,
+        "writer_sha_equal": true,
+        "owner_retained": true,
+        "canonical_exists": true,
+        "canonical_resolves_to_itself": true
+      }
+    ],
+    "ownership_only": "source authority migration; original12 compilation container preserved; no chain/type/consumer-ABI cutover or release claimed",
+    "all9_active_source_file": true,
+    "content9_record_states": [
+      "active-source-file",
+      "active-source-file",
+      "active-source-file",
+      "active-source-file",
+      "active-source-file",
+      "active-source-file",
+      "active-source-file",
+      "active-source-file",
+      "active-source-file"
+    ],
+    "workspace_partial_extractions": [
+      {
+        "package": "soulidity_content",
+        "repository": "soul-content",
+        "state": "active-source-files",
+        "modules": [
+          {
+            "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/authority.move",
+            "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/authority.move",
+            "sha256": "72b14a54093a542ffc065553920481cdffc3383eb6cb2f7d05f36c2355e97bfe",
+            "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/authority.move"
+          },
+          {
+            "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/authorization.move",
+            "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/authorization.move",
+            "sha256": "e1e337cd3e940f26f5eabad5c0fd486b192a0b6cf8327688c62e91ff310cb0dd",
+            "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/authorization.move"
+          },
+          {
+            "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/blob_custody.move",
+            "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/blob_custody.move",
+            "sha256": "81ab5b2b929a7b67c74ab6c6bafea67891d56ce751ada2da99ebf0690eca2737",
+            "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/blob_custody.move"
+          },
+          {
+            "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/document.move",
+            "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/document.move",
+            "sha256": "449575a36d14411276ad5c814ccdaeb4eff07d662d4b8bffeb72068e7bdb39e0",
+            "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/document.move"
+          },
+          {
+            "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/kind_registry.move",
+            "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/kind_registry.move",
+            "sha256": "9fa9db9d6d391bc27257ff7cb22552744b01e12ac7cf902a19adbbd0a08cad57",
+            "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/kind_registry.move"
+          },
+          {
+            "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/paid_access.move",
+            "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/paid_access.move",
+            "sha256": "3b39ce29771d0a22f668958b2198aafaa82deb75d5121d83a76882be47408c09",
+            "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/paid_access.move"
+          },
+          {
+            "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/paged_store.move",
+            "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/paged_store.move",
+            "sha256": "33d15484e8d5868d0202654373577a024077b8d43ae680ee68e974fbfe7fda0a",
+            "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/paged_store.move"
+          },
+          {
+            "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/permissions.move",
+            "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/permissions.move",
+            "sha256": "5b0bf758bfed7bd53ad1af4618beb4552a0125e1fcccc8c49e830f370f786dff",
+            "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/permissions.move"
+          },
+          {
+            "original": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/move/soulidity_content/sources/storage.move",
+            "canonical": "/Users/naoer/Documents/Claude/Projects/soulidity-ecosystem/soul-content/move/soulidity_content/sources/storage.move",
+            "sha256": "dba26fb0baac1a181363a43fb05353e77f078f527984442f79ca4647f25851ee",
+            "frozen_before": "/Users/naoer/.codex/worktrees/soul-dof-v1-rebuild/soulidity/output/ecosystem-construction/repository-split-2026-10-10/content-nine-source-before/storage.move"
+          }
+        ],
+        "retained_assembly_modules": [
+          "founding_library",
+          "loadout",
+          "state_configuration"
+        ],
+        "old_package_assembly": "12 original modules retained, 9 resolve to sole Content repository source; 3 retain their assigned Native/Extensions ownership",
+        "independent_package_modules": 9,
+        "independent_published_type_linkage_verified": false,
+        "consumer_or_chain_type_cutover": false,
+        "rollback": "After confirming canonical source unchanged, replace each original symlink with matching frozen-before file; restore workspace snapshot, regenerate source-authority map. Preserve candidate evidence."
+      }
+    ],
+    "workspace_production_sources_count": 52,
+    "all9_original_links_PASS": true,
+    "source52_migration_PASS": true,
+    "all9_frozen_before_sha_match": true,
+    "source52_unique_canonical_count": 52,
+    "workspace9_original_canonical_sha_match": true,
+    "no_consumer_or_chain_type_cutover": true
+  }
+}

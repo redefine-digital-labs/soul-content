@@ -1,0 +1,9 @@
+INCLUDING DEPENDENCY MoveStdlib
+INCLUDING DEPENDENCY SoulidityFoundation
+INCLUDING DEPENDENCY SoulidityStandard
+INCLUDING DEPENDENCY Sui
+INCLUDING DEPENDENCY WAL
+INCLUDING DEPENDENCY Walrus
+BUILDING SoulidityContent
+
+Summary generation successful. Summaries stored in '/Users/naoer/.codex/worktrees/soul-content9-pxr5j2df/evidence/candidate-abi-source'

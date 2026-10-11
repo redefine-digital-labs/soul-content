@@ -1,0 +1,28 @@
+INCLUDING DEPENDENCY MoveStdlib
+INCLUDING DEPENDENCY SoulidityFoundation
+INCLUDING DEPENDENCY SoulidityStandard
+INCLUDING DEPENDENCY Sui
+INCLUDING DEPENDENCY WAL
+INCLUDING DEPENDENCY Walrus
+BUILDING SoulidityContent
+Running Move unit tests
+[ PASS    ] soulidity_content::capacity_tests::append_513th_record_is_rejected
+[ PASS    ] soulidity_content::capacity_tests::large_rows_split_by_bytes_before_row_count_without_changing_values
+[ PASS    ] soulidity_content::storage_epoch_tests::batch_checks_last_actual_blob_identity
+[ PASS    ] soulidity_content::storage_epoch_tests::batch_checks_last_expired_blob_after_an_earlier_renewed_blob
+[ PASS    ] soulidity_content::capacity_tests::page_ranges_preserve_order_across_row_and_byte_boundaries
+[ PASS    ] soulidity_content::capacity_tests::range_overflow_cannot_wrap_into_an_existing_page
+[ PASS    ] soulidity_content::capacity_tests::range_past_end_is_rejected_before_reading_a_page
+[ PASS    ] soulidity_content::capacity_tests::single_row_cannot_hide_oversize_bcs_value
+[ PASS    ] soulidity_content::capacity_tests::unknown_record_index_cannot_alias_existing_inventory
+[ PASS    ] soulidity_content::storage_epoch_tests::batch_current_checks_actual_identity_and_returns_no_cached_authority
+[ PASS    ] soulidity_content::storage_epoch_tests::batch_does_not_accept_missing_actual_blobs
+[ PASS    ] soulidity_content::storage_epoch_tests::certification_batch_checks_last_deletable_blob
+[ PASS    ] soulidity_content::storage_epoch_tests::certification_batch_checks_last_uncertified_blob
+[ PASS    ] soulidity_content::storage_epoch_tests::certification_batch_matches_single_blob_references_in_input_order
+[ PASS    ] soulidity_content::storage_epoch_tests::certification_batch_rejects_missing_transport_hash
+[ PASS    ] soulidity_content::storage_epoch_tests::certification_batch_rejects_wrong_digest_length
+[ PASS    ] soulidity_content::storage_epoch_tests::certified_blob_expires_at_real_walrus_epoch_boundary
+[ PASS    ] soulidity_content::storage_epoch_tests::earlier_successful_batch_cannot_hide_a_later_actual_epoch_change
+[ PASS    ] soulidity_content::storage_epoch_tests::extended_blob_remains_available_past_original_reference_end
+Test result: OK. Total tests: 19; passed: 19; failed: 0
