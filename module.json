@@ -45,12 +45,21 @@
     }
   },
   "artifact_state": {
-    "repository_creation": "local_git_created; no remote or commit",
+    "repository_creation": "public_remote_created; source_checkpoint_pushed_and_verified",
     "source_migration": "9 active-source-files, original12 consumers retain assembly with same9 source links and3 retained responsibility originals",
     "build": "Imported Content9 production and Core/Native consumer production passed; consumer dumps byte-identical",
     "runtime_acceptance": "19/19 original scoped VM passed; full authorization/paid-access/Core/Native journeys and real runtime pending",
     "independent_deployment": "not_verified",
-    "remote_ci_execution": "not_run"
+    "remote_ci_execution": "not_run",
+    "remote_backup": {
+      "url": "https://github.com/redefine-digital-labs/soul-content",
+      "visibility": "PUBLIC",
+      "default_branch": "main",
+      "verified_source_commit": "dd7c241e163d605a3cbb77030a4318af1c12fa93",
+      "source_checkpoint_verified": true,
+      "actions_enabled": false,
+      "scope": "Source backup; independent product/release/runtime status remains as separately recorded"
+    }
   },
   "management": {
     "functions": [
